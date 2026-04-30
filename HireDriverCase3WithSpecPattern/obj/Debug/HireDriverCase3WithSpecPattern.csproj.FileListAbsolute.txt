@@ -1,0 +1,7 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCase3WithSpecPattern\bin\Debug\HireDriverCase3WithSpecPattern.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCase3WithSpecPattern\bin\Debug\HireDriverCase3WithSpecPattern.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCase3WithSpecPattern\bin\Debug\HireDriverCase3WithSpecPattern.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCase3WithSpecPattern\obj\Debug\HireDriverCase3WithSpecPattern.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCase3WithSpecPattern\obj\Debug\HireDriverCase3WithSpecPattern.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCase3WithSpecPattern\obj\Debug\HireDriverCase3WithSpecPattern.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCase3WithSpecPattern\obj\Debug\HireDriverCase3WithSpecPattern.pdb

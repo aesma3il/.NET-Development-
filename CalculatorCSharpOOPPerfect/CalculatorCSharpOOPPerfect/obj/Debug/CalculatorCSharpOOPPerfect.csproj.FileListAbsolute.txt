@@ -1,0 +1,7 @@
+C:\Users\abdul\Documents\Visual Studio 2022\CalculatorCSharpOOPPerfect\CalculatorCSharpOOPPerfect\bin\Debug\CalculatorCSharpOOPPerfect.exe.config
+C:\Users\abdul\Documents\Visual Studio 2022\CalculatorCSharpOOPPerfect\CalculatorCSharpOOPPerfect\bin\Debug\CalculatorCSharpOOPPerfect.exe
+C:\Users\abdul\Documents\Visual Studio 2022\CalculatorCSharpOOPPerfect\CalculatorCSharpOOPPerfect\bin\Debug\CalculatorCSharpOOPPerfect.pdb
+C:\Users\abdul\Documents\Visual Studio 2022\CalculatorCSharpOOPPerfect\CalculatorCSharpOOPPerfect\obj\Debug\CalculatorCSharpOOPPerfect.csproj.AssemblyReference.cache
+C:\Users\abdul\Documents\Visual Studio 2022\CalculatorCSharpOOPPerfect\CalculatorCSharpOOPPerfect\obj\Debug\CalculatorCSharpOOPPerfect.csproj.CoreCompileInputs.cache
+C:\Users\abdul\Documents\Visual Studio 2022\CalculatorCSharpOOPPerfect\CalculatorCSharpOOPPerfect\obj\Debug\CalculatorCSharpOOPPerfect.exe
+C:\Users\abdul\Documents\Visual Studio 2022\CalculatorCSharpOOPPerfect\CalculatorCSharpOOPPerfect\obj\Debug\CalculatorCSharpOOPPerfect.pdb

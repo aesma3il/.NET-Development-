@@ -1,0 +1,8 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\bin\Debug\HireDriverCaseOne.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\bin\Debug\HireDriverCaseOne.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\bin\Debug\HireDriverCaseOne.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\obj\Debug\HireDriverCaseOne.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\obj\Debug\HireDriverCaseOne.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\obj\Debug\HireDriverCaseOne.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\obj\Debug\HireDriverCaseOne.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\HireDriverCaseOne\obj\Debug\HireDriverCaseOne.exe.config

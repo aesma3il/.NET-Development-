@@ -1,0 +1,7 @@
+D:\Portofolio\FinTech Full stack .net Developer\CommissionStrategyPattern\CommissionStrategyPattern\bin\Debug\CommissionStrategyPattern.exe.config
+D:\Portofolio\FinTech Full stack .net Developer\CommissionStrategyPattern\CommissionStrategyPattern\bin\Debug\CommissionStrategyPattern.exe
+D:\Portofolio\FinTech Full stack .net Developer\CommissionStrategyPattern\CommissionStrategyPattern\bin\Debug\CommissionStrategyPattern.pdb
+D:\Portofolio\FinTech Full stack .net Developer\CommissionStrategyPattern\CommissionStrategyPattern\obj\Debug\CommissionStrategyPattern.csproj.AssemblyReference.cache
+D:\Portofolio\FinTech Full stack .net Developer\CommissionStrategyPattern\CommissionStrategyPattern\obj\Debug\CommissionStrategyPattern.csproj.CoreCompileInputs.cache
+D:\Portofolio\FinTech Full stack .net Developer\CommissionStrategyPattern\CommissionStrategyPattern\obj\Debug\CommissionStrategyPattern.exe
+D:\Portofolio\FinTech Full stack .net Developer\CommissionStrategyPattern\CommissionStrategyPattern\obj\Debug\CommissionStrategyPattern.pdb
