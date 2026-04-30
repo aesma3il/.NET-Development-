@@ -1,0 +1,7 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\StrategyPatternStudentSys\bin\Debug\StrategyPatternStudentSys.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\StrategyPatternStudentSys\bin\Debug\StrategyPatternStudentSys.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\StrategyPatternStudentSys\bin\Debug\StrategyPatternStudentSys.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\StrategyPatternStudentSys\obj\Debug\StrategyPatternStudentSys.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\StrategyPatternStudentSys\obj\Debug\StrategyPatternStudentSys.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\StrategyPatternStudentSys\obj\Debug\StrategyPatternStudentSys.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\StrategyPatternStudentSys\obj\Debug\StrategyPatternStudentSys.pdb
