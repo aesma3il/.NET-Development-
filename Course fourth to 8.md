@@ -12036,4 +12036,696 @@ Congratulations! You have completed a comprehensive journey through **Object-Ori
 ✅ Projects: Calculator, Person, Employee, String, Date, Period  
 
 ---
- 
+ # Date and time project
+ ---
+ Here is a complete C# implementation of the Date and Time project, written without using built-in date/time functions (except for basic math operations).
+
+```markdown
+# Date and Time Project - Complete C# Implementation
+
+A comprehensive date and time library implemented purely in C# without using any built-in date/time functions like `DateTime`, `TimeSpan`, or calendar APIs.
+
+## Constants
+
+```csharp
+public static class DateTimeConstants
+{
+    // Time conversions
+    public const int SECONDS_PER_MINUTE = 60;
+    public const int SECONDS_PER_HOUR = 3600;  // 60 * 60
+    public const int SECONDS_PER_DAY = 86400;  // 24 * 3600
+    
+    // Days
+    public const int DAYS_PER_YEAR = 365;
+    public const int DAYS_PER_LEAP_YEAR = 366;
+    public const int DAYS_PER_WEEK = 7;
+    public const int APPROX_DAYS_PER_MONTH = 30;
+    
+    // Years
+    public const int DECADE_YEARS = 10;
+    public const int CENTURY_YEARS = 100;
+    public const int FORTNIGHT_DAYS = 14;
+    
+    // Month days for non-leap year
+    public static readonly int[] DAYS_IN_MONTHS = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    
+    // Month names
+    public static readonly string[] MONTH_NAMES = { 
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December" 
+    };
+    
+    // Day names (Starting from Monday as day 1)
+    public static readonly string[] DAY_NAMES = { 
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" 
+    };
+    
+    // Seasons
+    public static readonly string[] SEASONS = { "Spring", "Summer", "Autumn", "Winter" };
+    
+    // Epoch reference (arbitrary starting point)
+    public const int EPOCH_START_YEAR = 1970;
+}
+```
+
+## Data Structures
+
+```csharp
+public struct Date
+{
+    public int Year;
+    public int Month;
+    public int Day;
+    
+    public Date(int year, int month, int day)
+    {
+        Year = year;
+        Month = month;
+        Day = day;
+    }
+}
+
+public struct Time
+{
+    public int Hour;
+    public int Minute;
+    public int Second;
+    
+    public Time(int hour, int minute, int second)
+    {
+        Hour = hour;
+        Minute = minute;
+        Second = second;
+    }
+}
+
+public struct DateTime
+{
+    public Date Date;
+    public Time Time;
+    
+    public DateTime(int year, int month, int day, int hour, int minute, int second)
+    {
+        Date = new Date(year, month, day);
+        Time = new Time(hour, minute, second);
+    }
+}
+
+public struct TimeDifference
+{
+    public int Years;
+    public int Months;
+    public int Days;
+    public int Hours;
+    public int Minutes;
+    public int Seconds;
+}
+```
+
+## Core Date Functions
+
+### Leap Year Detection
+
+```csharp
+public static bool IsLeapYear(int year)
+{
+    // Using mathematical operations only
+    int remainderBy4 = year % 4;
+    int remainderBy100 = year % 100;
+    int remainderBy400 = year % 400;
+    
+    bool isNormalLeapCandidate = (remainderBy4 == 0);
+    bool isCenturyYear = (remainderBy100 == 0);
+    bool isQuadCenturyLeapOverride = (remainderBy400 == 0);
+    
+    // Leap year if: (divisible by 4 AND not century) OR divisible by 400
+    return (isNormalLeapCandidate && !isCenturyYear) || isQuadCenturyLeapOverride;
+}
+```
+
+### Days in Month
+
+```csharp
+public static int GetDaysInMonth(int year, int month)
+{
+    if (month < 1 || month > 12) return 0;
+    
+    // February in leap year has 29 days
+    if (month == 2 && IsLeapYear(year))
+        return 29;
+    
+    return DateTimeConstants.DAYS_IN_MONTHS[month - 1];
+}
+```
+
+### Day of Week (Zeller's Congruence)
+
+```csharp
+public static string GetDayOfWeek(int year, int month, int day)
+{
+    // Zeller's Congruence algorithm
+    // Returns: 0=Monday, 1=Tuesday, ..., 6=Sunday
+    
+    int q = day;
+    int m = month;
+    int y = year;
+    
+    // Adjust for January and February being months 13 and 14 of previous year
+    if (m < 3)
+    {
+        m = m + 12;
+        y = y - 1;
+    }
+    
+    int K = y % 100;  // Year of the century
+    int J = y / 100;  // Zero-based century
+    
+    // Zeller's formula for Gregorian calendar
+    int h = (q + (13 * (m + 1)) / 5 + K + K / 4 + J / 4 + 5 * J) % 7;
+    
+    // Convert to Monday-based (where 0 = Monday)
+    // Formula gives 0=Saturday, 1=Sunday, 2=Monday...
+    int mondayBased = (h + 5) % 7;
+    
+    return DateTimeConstants.DAY_NAMES[mondayBased];
+}
+```
+
+### Get Season
+
+```csharp
+public static string GetSeason(int month, int day)
+{
+    // Northern hemisphere seasons based on astronomical definitions
+    if ((month == 12 && day >= 21) || month == 1 || month == 2 || (month == 3 && day < 20))
+        return "Winter";
+    else if ((month == 3 && day >= 20) || month == 4 || month == 5 || (month == 6 && day < 21))
+        return "Spring";
+    else if ((month == 6 && day >= 21) || month == 7 || month == 8 || (month == 9 && day < 22))
+        return "Summer";
+    else
+        return "Autumn";
+}
+```
+
+## Time Conversion Functions
+
+### Basic Unit Conversions
+
+```csharp
+public static int SecondsFromMinutes(int minutes)
+{
+    return minutes * DateTimeConstants.SECONDS_PER_MINUTE;
+}
+
+public static int SecondsFromHours(int hours)
+{
+    return hours * DateTimeConstants.SECONDS_PER_HOUR;
+}
+
+public static long SecondsFromDays(int days)
+{
+    return days * (long)DateTimeConstants.SECONDS_PER_DAY;
+}
+
+public static int MinutesFromSeconds(int seconds)
+{
+    return seconds / DateTimeConstants.SECONDS_PER_MINUTE;
+}
+
+public static int HoursFromSeconds(int seconds)
+{
+    return seconds / DateTimeConstants.SECONDS_PER_HOUR;
+}
+
+public static int DaysFromSeconds(long seconds)
+{
+    return (int)(seconds / DateTimeConstants.SECONDS_PER_DAY);
+}
+
+public static int HoursFromMinutes(int minutes)
+{
+    return minutes / DateTimeConstants.SECONDS_PER_MINUTE;
+}
+
+public static int MinutesFromHours(int hours)
+{
+    return hours * DateTimeConstants.SECONDS_PER_MINUTE;
+}
+
+public static int DaysFromHours(int hours)
+{
+    return hours / 24;
+}
+
+public static int HoursFromDays(int days)
+{
+    return days * 24;
+}
+```
+
+### Component Extraction
+
+```csharp
+public static void GetMinutesAndSeconds(int totalSeconds, out int minutes, out int seconds)
+{
+    minutes = totalSeconds / DateTimeConstants.SECONDS_PER_MINUTE;
+    seconds = totalSeconds % DateTimeConstants.SECONDS_PER_MINUTE;
+}
+
+public static void GetHoursMinutesSeconds(int totalSeconds, out int hours, out int minutes, out int seconds)
+{
+    hours = totalSeconds / DateTimeConstants.SECONDS_PER_HOUR;
+    minutes = (totalSeconds % DateTimeConstants.SECONDS_PER_HOUR) / DateTimeConstants.SECONDS_PER_MINUTE;
+    seconds = totalSeconds % DateTimeConstants.SECONDS_PER_MINUTE;
+}
+
+public static void GetDaysHoursMinutesSeconds(long totalSeconds, out int days, out int hours, out int minutes, out int seconds)
+{
+    days = (int)(totalSeconds / DateTimeConstants.SECONDS_PER_DAY);
+    long remaining = totalSeconds % DateTimeConstants.SECONDS_PER_DAY;
+    
+    hours = (int)(remaining / DateTimeConstants.SECONDS_PER_HOUR);
+    remaining = remaining % DateTimeConstants.SECONDS_PER_HOUR;
+    
+    minutes = (int)(remaining / DateTimeConstants.SECONDS_PER_MINUTE);
+    seconds = (int)(remaining % DateTimeConstants.SECONDS_PER_MINUTE);
+}
+```
+
+## Date Difference and Age Calculation
+
+```csharp
+public static int CalculateAgeInYears(Date birthDate, Date currentDate)
+{
+    int age = currentDate.Year - birthDate.Year;
+    
+    // Subtract if birthday hasn't occurred yet this year
+    if (currentDate.Month < birthDate.Month ||
+        (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
+    {
+        age = age - 1;
+    }
+    
+    return age;
+}
+
+public static int CalculateAgeInMonths(Date birthDate, Date currentDate)
+{
+    int yearDiff = currentDate.Year - birthDate.Year;
+    int monthDiff = currentDate.Month - birthDate.Month;
+    
+    int totalMonths = yearDiff * 12 + monthDiff;
+    
+    // Adjust if day of month hasn't been reached
+    if (currentDate.Day < birthDate.Day)
+        totalMonths = totalMonths - 1;
+    
+    return totalMonths;
+}
+
+public static long CalculateAgeInDays(Date birthDate, Date currentDate)
+{
+    long days = 0;
+    
+    // Add days from full years between birth year and current year
+    for (int year = birthDate.Year; year < currentDate.Year; year++)
+    {
+        days += IsLeapYear(year) ? DateTimeConstants.DAYS_PER_LEAP_YEAR : DateTimeConstants.DAYS_PER_YEAR;
+    }
+    
+    // Add days from birth date to end of birth year
+    for (int month = birthDate.Month; month <= 12; month++)
+    {
+        int daysInMonth = GetDaysInMonth(birthDate.Year, month);
+        int startDay = (month == birthDate.Month) ? birthDate.Day : 1;
+        days += daysInMonth - startDay + 1;
+    }
+    
+    // Subtract days from start of current year to current date
+    for (int month = 1; month < currentDate.Month; month++)
+    {
+        days -= GetDaysInMonth(currentDate.Year, month);
+    }
+    days -= currentDate.Day;
+    
+    return days;
+}
+```
+
+## Time Arithmetic
+
+### Adding Time with Rollover
+
+```csharp
+public static Time AddHours(Time time, int hoursToAdd)
+{
+    int totalHours = time.Hour + hoursToAdd;
+    int newHour = totalHours % 24;
+    
+    return new Time(newHour, time.Minute, time.Second);
+}
+
+public static Time AddMinutes(Time time, int minutesToAdd)
+{
+    int totalMinutes = time.Minute + minutesToAdd;
+    int extraHours = totalMinutes / DateTimeConstants.SECONDS_PER_MINUTE;
+    int newMinute = totalMinutes % DateTimeConstants.SECONDS_PER_MINUTE;
+    int newHour = (time.Hour + extraHours) % 24;
+    
+    return new Time(newHour, newMinute, time.Second);
+}
+
+public static Time AddSeconds(Time time, int secondsToAdd)
+{
+    int totalSeconds = time.Second + secondsToAdd;
+    int extraMinutes = totalSeconds / DateTimeConstants.SECONDS_PER_MINUTE;
+    int newSecond = totalSeconds % DateTimeConstants.SECONDS_PER_MINUTE;
+    
+    int totalMinutes = time.Minute + extraMinutes;
+    int extraHours = totalMinutes / DateTimeConstants.SECONDS_PER_MINUTE;
+    int newMinute = totalMinutes % DateTimeConstants.SECONDS_PER_MINUTE;
+    int newHour = (time.Hour + extraHours) % 24;
+    
+    return new Time(newHour, newMinute, newSecond);
+}
+```
+
+### Time Comparisons
+
+```csharp
+public static bool IsTimeBetween(Time current, Time start, Time end)
+{
+    int currentSeconds = current.Hour * DateTimeConstants.SECONDS_PER_HOUR + 
+                         current.Minute * DateTimeConstants.SECONDS_PER_MINUTE + 
+                         current.Second;
+    int startSeconds = start.Hour * DateTimeConstants.SECONDS_PER_HOUR + 
+                       start.Minute * DateTimeConstants.SECONDS_PER_MINUTE + 
+                       start.Second;
+    int endSeconds = end.Hour * DateTimeConstants.SECONDS_PER_HOUR + 
+                     end.Minute * DateTimeConstants.SECONDS_PER_MINUTE + 
+                     end.Second;
+    
+    return startSeconds <= currentSeconds && currentSeconds <= endSeconds;
+}
+
+public static bool IsTimeBefore(Time current, Time end)
+{
+    int currentSeconds = current.Hour * DateTimeConstants.SECONDS_PER_HOUR + 
+                         current.Minute * DateTimeConstants.SECONDS_PER_MINUTE + 
+                         current.Second;
+    int endSeconds = end.Hour * DateTimeConstants.SECONDS_PER_HOUR + 
+                     end.Minute * DateTimeConstants.SECONDS_PER_MINUTE + 
+                     end.Second;
+    
+    return currentSeconds < endSeconds;
+}
+
+public static bool IsTimeAfter(Time current, Time start)
+{
+    int currentSeconds = current.Hour * DateTimeConstants.SECONDS_PER_HOUR + 
+                         current.Minute * DateTimeConstants.SECONDS_PER_MINUTE + 
+                         current.Second;
+    int startSeconds = start.Hour * DateTimeConstants.SECONDS_PER_HOUR + 
+                       start.Minute * DateTimeConstants.SECONDS_PER_MINUTE + 
+                       start.Second;
+    
+    return currentSeconds > startSeconds;
+}
+```
+
+## Elapsed Time and Formatting
+
+```csharp
+public static long GetElapsedSeconds(Time start, Time end)
+{
+    long startSeconds = start.Hour * (long)DateTimeConstants.SECONDS_PER_HOUR +
+                        start.Minute * DateTimeConstants.SECONDS_PER_MINUTE +
+                        start.Second;
+    long endSeconds = end.Hour * (long)DateTimeConstants.SECONDS_PER_HOUR +
+                      end.Minute * DateTimeConstants.SECONDS_PER_MINUTE +
+                      end.Second;
+    
+    return endSeconds - startSeconds;
+}
+
+public static TimeDifference GetFullDifference(DateTime from, DateTime to)
+{
+    long fromSeconds = ConvertToTotalSeconds(from);
+    long toSeconds = ConvertToTotalSeconds(to);
+    long diffSeconds = toSeconds - fromSeconds;
+    
+    TimeDifference diff = new TimeDifference();
+    
+    // Calculate approximate years
+    diff.Years = (int)(diffSeconds / (DateTimeConstants.DAYS_PER_YEAR * (long)DateTimeConstants.SECONDS_PER_DAY));
+    diffSeconds %= DateTimeConstants.DAYS_PER_YEAR * (long)DateTimeConstants.SECONDS_PER_DAY;
+    
+    // Calculate months (approx)
+    diff.Months = (int)(diffSeconds / (DateTimeConstants.APPROX_DAYS_PER_MONTH * (long)DateTimeConstants.SECONDS_PER_DAY));
+    diffSeconds %= DateTimeConstants.APPROX_DAYS_PER_MONTH * (long)DateTimeConstants.SECONDS_PER_DAY;
+    
+    // Calculate days
+    diff.Days = (int)(diffSeconds / DateTimeConstants.SECONDS_PER_DAY);
+    diffSeconds %= DateTimeConstants.SECONDS_PER_DAY;
+    
+    // Calculate hours, minutes, seconds
+    diff.Hours = (int)(diffSeconds / DateTimeConstants.SECONDS_PER_HOUR);
+    diffSeconds %= DateTimeConstants.SECONDS_PER_HOUR;
+    
+    diff.Minutes = (int)(diffSeconds / DateTimeConstants.SECONDS_PER_MINUTE);
+    diff.Seconds = (int)(diffSeconds % DateTimeConstants.SECONDS_PER_MINUTE);
+    
+    return diff;
+}
+
+public static long ConvertToTotalSeconds(DateTime dt)
+{
+    long seconds = 0;
+    
+    // Add seconds from years
+    for (int year = DateTimeConstants.EPOCH_START_YEAR; year < dt.Date.Year; year++)
+    {
+        seconds += (IsLeapYear(year) ? DateTimeConstants.DAYS_PER_LEAP_YEAR : DateTimeConstants.DAYS_PER_YEAR) *
+                   (long)DateTimeConstants.SECONDS_PER_DAY;
+    }
+    
+    // Add seconds from months
+    for (int month = 1; month < dt.Date.Month; month++)
+    {
+        seconds += GetDaysInMonth(dt.Date.Year, month) * (long)DateTimeConstants.SECONDS_PER_DAY;
+    }
+    
+    // Add seconds from days
+    seconds += (dt.Date.Day - 1) * (long)DateTimeConstants.SECONDS_PER_DAY;
+    
+    // Add time components
+    seconds += dt.Time.Hour * (long)DateTimeConstants.SECONDS_PER_HOUR;
+    seconds += dt.Time.Minute * DateTimeConstants.SECONDS_PER_MINUTE;
+    seconds += dt.Time.Second;
+    
+    return seconds;
+}
+```
+
+## Social Media Style Relative Time
+
+```csharp
+public static string GetRelativeTimeString(DateTime pastDate, DateTime currentDate)
+{
+    long pastSeconds = ConvertToTotalSeconds(pastDate);
+    long currentSeconds = ConvertToTotalSeconds(currentDate);
+    long diffSeconds = currentSeconds - pastSeconds;
+    
+    if (diffSeconds < 0) return "in the future";
+    
+    // Just now - less than 30 seconds
+    if (diffSeconds < 30)
+        return "Just now";
+    
+    // Seconds ago
+    if (diffSeconds < 60)
+        return diffSeconds + " seconds ago";
+    
+    // Minutes ago
+    long diffMinutes = diffSeconds / DateTimeConstants.SECONDS_PER_MINUTE;
+    if (diffMinutes < 60)
+        return diffMinutes + " minute" + (diffMinutes > 1 ? "s" : "") + " ago";
+    
+    // Hours ago
+    long diffHours = diffSeconds / DateTimeConstants.SECONDS_PER_HOUR;
+    if (diffHours < 24)
+        return diffHours + " hour" + (diffHours > 1 ? "s" : "") + " ago";
+    
+    // Days ago
+    long diffDays = diffSeconds / DateTimeConstants.SECONDS_PER_DAY;
+    if (diffDays < 7)
+        return diffDays + " day" + (diffDays > 1 ? "s" : "") + " ago";
+    
+    // Weeks ago
+    long diffWeeks = diffDays / DateTimeConstants.DAYS_PER_WEEK;
+    if (diffWeeks < 4)
+        return diffWeeks + " week" + (diffWeeks > 1 ? "s" : "") + " ago";
+    
+    // Months ago
+    long diffMonths = diffDays / DateTimeConstants.APPROX_DAYS_PER_MONTH;
+    if (diffMonths < 12)
+        return diffMonths + " month" + (diffMonths > 1 ? "s" : "") + " ago";
+    
+    // Years ago
+    long diffYears = diffMonths / 12;
+    return diffYears + " year" + (diffYears > 1 ? "s" : "") + " ago";
+}
+```
+
+## Time Formatting
+
+```csharp
+public static string ConvertTo12HourFormat(int hour24, out string ampm)
+{
+    if (hour24 == 0)
+    {
+        ampm = "AM";
+        return "12";
+    }
+    else if (hour24 < 12)
+    {
+        ampm = "AM";
+        return hour24.ToString();
+    }
+    else if (hour24 == 12)
+    {
+        ampm = "PM";
+        return "12";
+    }
+    else
+    {
+        ampm = "PM";
+        return (hour24 - 12).ToString();
+    }
+}
+
+public static string FormatTime(Time time, bool use24Hour = true)
+{
+    if (use24Hour)
+    {
+        return $"{time.Hour:D2}:{time.Minute:D2}:{time.Second:D2}";
+    }
+    else
+    {
+        string hour12;
+        string ampm;
+        hour12 = ConvertTo12HourFormat(time.Hour, out ampm);
+        return $"{hour12}:{time.Minute:D2}:{time.Second:D2} {ampm}";
+    }
+}
+
+public static string FormatDate(Date date)
+{
+    return $"{DateTimeConstants.MONTH_NAMES[date.Month - 1]} {date.Day}, {date.Year}";
+}
+
+public static string FormatDateShort(Date date)
+{
+    return $"{date.Month:D2}/{date.Day:D2}/{date.Year}";
+}
+```
+
+## Complete Example Program
+
+```csharp
+public static class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("=== DATE AND TIME PROJECT ===\n");
+        
+        // Demonstrate date components
+        Date today = new Date(2025, 5, 3);
+        Time currentTime = new Time(14, 30, 45);
+        DateTime now = new DateTime(2025, 5, 3, 14, 30, 45);
+        
+        Console.WriteLine("=== Date Components ===");
+        Console.WriteLine($"Today: {FormatDate(today)}");
+        Console.WriteLine($"Day of week: {GetDayOfWeek(today.Year, today.Month, today.Day)}");
+        Console.WriteLine($"Season: {GetSeason(today.Month, today.Day)}");
+        Console.WriteLine($"Is leap year: {IsLeapYear(today.Year)}");
+        Console.WriteLine($"Days in month: {GetDaysInMonth(today.Year, today.Month)}");
+        
+        Console.WriteLine("\n=== Time Components ===");
+        Console.WriteLine($"Time: {FormatTime(currentTime)}");
+        Console.WriteLine($"12-hour format: {FormatTime(currentTime, false)}");
+        
+        Console.WriteLine("\n=== Time Conversions ===");
+        Console.WriteLine($"5 hours = {SecondsFromHours(5)} seconds");
+        Console.WriteLine($"90 minutes = {MinutesFromSeconds(5400)} minutes");
+        
+        int hours, minutes, seconds;
+        GetHoursMinutesSeconds(3665, out hours, out minutes, out seconds);
+        Console.WriteLine($"3665 seconds = {hours}h {minutes}m {seconds}s");
+        
+        Console.WriteLine("\n=== Age Calculation ===");
+        Date birthDate = new Date(1990, 6, 15);
+        int age = CalculateAgeInYears(birthDate, today);
+        int ageMonths = CalculateAgeInMonths(birthDate, today);
+        Console.WriteLine($"Birth date: {FormatDate(birthDate)}");
+        Console.WriteLine($"Age: {age} years ({ageMonths} months)");
+        
+        Console.WriteLine("\n=== Elapsed Time ===");
+        Time start = new Time(9, 0, 0);
+        Time end = new Time(17, 30, 0);
+        long elapsedSec = GetElapsedSeconds(start, end);
+        GetHoursMinutesSeconds((int)elapsedSec, out hours, out minutes, out seconds);
+        Console.WriteLine($"Work day: {FormatTime(start)} to {FormatTime(end)}");
+        Console.WriteLine($"Elapsed: {hours}h {minutes}m {seconds}s");
+        
+        Console.WriteLine("\n=== Social Media Relative Time ===");
+        DateTime past = new DateTime(2025, 4, 28, 10, 0, 0);  // 5 days ago
+        Console.WriteLine($"Posted on {FormatDate(past.Date)}: {GetRelativeTimeString(past, now)}");
+        
+        DateTime twoHoursAgo = new DateTime(2025, 5, 3, 12, 30, 0);
+        Console.WriteLine($"Posted at 12:30: {GetRelativeTimeString(twoHoursAgo, now)}");
+        
+        DateTime justNow = new DateTime(2025, 5, 3, 14, 30, 20);
+        Console.WriteLine($"Posted 25 seconds ago: {GetRelativeTimeString(justNow, now)}");
+        
+        Console.WriteLine("\n=== Date Difference ===");
+        Date startDate = new Date(2023, 1, 1);
+        Date endDate = new Date(2025, 5, 3);
+        long daysDiff = CalculateAgeInDays(startDate, endDate);
+        Console.WriteLine($"From {FormatDate(startDate)} to {FormatDate(endDate)}: {daysDiff} days");
+        
+        Console.WriteLine("\n=== Date Hierarchy ===");
+        Console.WriteLine($"Year {today.Year} contains 12 months");
+        Console.WriteLine($"Month {DateTimeConstants.MONTH_NAMES[today.Month - 1]} contains {GetDaysInMonth(today.Year, today.Month)} days");
+        Console.WriteLine($"Day contains 24 hours");
+        Console.WriteLine($"Hour contains 60 minutes");
+        Console.WriteLine($"Minute contains 60 seconds");
+        Console.WriteLine($"Week contains 7 days");
+        Console.Write("Days of week: ");
+        for (int i = 0; i < DateTimeConstants.DAYS_PER_WEEK; i++)
+        {
+            Console.Write(DateTimeConstants.DAY_NAMES[i]);
+            if (i < 6) Console.Write(", ");
+        }
+        Console.WriteLine();
+    }
+}
+```
+
+## Mathematical Summary
+
+| Operation | Formula |
+|-----------|---------|
+| Second to Minute | `Minute = Second ÷ 60` |
+| Minute to Hour | `Hour = Minute ÷ 60` |
+| Hour to Day | `Day = Hour ÷ 24` |
+| Day to Year | `Year = Day ÷ 365` |
+| Seconds in Minute | `60` |
+| Seconds in Hour | `60 × 60 = 3600` |
+| Seconds in Day | `24 × 3600 = 86400` |
+| Leap Year Rule | `(year % 4 == 0 && year % 100 != 0) \|\| (year % 400 == 0)` |
+| Zeller's Congruence | `h = (q + 13(m+1)/5 + K + K/4 + J/4 + 5J) % 7` |
+
+This implementation provides a complete date and time system using only basic C# language features and mathematical operations, with no reliance on built-in date/time functions.
+```
