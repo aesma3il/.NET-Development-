@@ -8822,3 +8822,263 @@ int main() {
 
 
 ---
+
+---
+# course 9
+Here are the **concepts** extracted from the provided Arabic text, rewritten as an **English Markdown file**.
+
+---
+
+# Extracted Concepts: Networking & Protocols
+
+## Lesson 1: Basics of Networks
+- **Network**: A group of devices connected to share resources and communicate.
+- **Purpose of a Network**: Resource sharing, communication (e.g., controlling a TV via phone, sharing files).
+- **LAN (Local Area Network)**: Connects close devices (e.g., home, school, hospital). Small or large scale.
+- **WAN (Wide Area Network)**: Connects LANs over long distances (e.g., cities, countries). The Internet is the largest WAN.
+- **Connection Types**:
+    - **Wired**: Uses Ethernet protocol, cables, switches.
+    - **Wireless (Wi-Fi)**: Convenient, no cables. Wi-Fi = Wireless Fidelity.
+- **Ethernet vs. Wi-Fi**: Ethernet is faster, more stable; Wi-Fi is easier but less stable.
+
+## Lesson 2: MAN (Metropolitan Area Network)
+- **MAN**: Larger than LAN, smaller than WAN. Covers a city.
+- **Comparison**:
+    - **WAN**: Largest, slowest, expensive, more errors.
+    - **MAN**: Medium speed/cost/errors.
+    - **LAN**: Fastest, cheapest, fewest errors.
+
+## Lesson 3: What is a Server?
+- **Server**: A device (computer) that provides services, shares, and processes data for clients.
+- **Server vs. PC**:
+    - **PC**: Cheaper, less reliable, designed for general use.
+    - **Server**: Expensive, highly reliable, 24/7 operation.
+- **Types of Servers**: Web, Database, Mail, File, Application, Game/VoIP/Image.
+- **Physical Forms**: Tower, Rack, Blade.
+
+## Lesson 4: How Data is Transferred?
+- Data is split into small pieces (packets), sent separately, then reassembled.
+- A central manager (future lessons) oversees this process.
+
+## Lesson 5: TCP (Transmission Control Protocol)
+- **TCP** is responsible for:
+    - Sending small packets.
+    - Reassembling data correctly.
+    - Avoiding congestion/conflicts.
+- Works between sender and receiver.
+
+## Lesson 6: IP Protocol Part 1 (IPv4)
+- **IP Address**: Unique identifier for a device on a network (like a home address).
+- **IPv4**: 4 numbers (0-255), e.g., `192.168.1.1`. Each number is 8 bits. Total ~4 billion addresses.
+
+## Lesson 7: IP Protocol Part 2 (IPv6)
+- **IPv6**: Newer standard due to IPv4 exhaustion.
+- **Format**: 128 bits, written in hexadecimal (8 groups of 16 bits).
+- **Example**: `2001:0db8:0000:0000:ff00:0000:0042:8330`
+- Shortened: `2001:bd8:ff00:0:42:8330`
+- Capacity: ~3.4×10³⁸ addresses.
+
+## Lesson 8: IP Types
+- **Public IP**: Unique worldwide, assigned by ISP.
+- **Private IP**: Used inside local networks (e.g., home Wi-Fi), can repeat in different networks.
+- **Static IP**: Fixed, used for servers/cameras.
+- **Dynamic IP**: Changes automatically via DHCP, common for regular users.
+
+## Lesson 9: Modem, Router, Gateway & Mesh Network
+- **Modem**: Converts signal from ISP to computer-understandable data.
+- **Router**: Distributes internet to multiple devices (wired/wireless). Works on 2.4 GHz (longer range) or 5 GHz (faster speed).
+- **Gateway**: Connects different networks, translates protocols. More powerful than a router.
+- **Mesh Network**: Main router + small nodes. Eliminates weak signal zones. Good for large homes.
+
+| Feature | Normal Router | Mesh Network |
+|---------|---------------|---------------|
+| Coverage | Limited | Full area |
+| Signal | Weakens with distance | Strong everywhere |
+| Setup | Easy, one device | More nodes |
+| Cost | Cheaper | More expensive |
+
+## Lesson 10: DHCP (Dynamic Host Configuration Protocol)
+- **DHCP** automatically assigns IPs and network settings.
+- **Functions**:
+    - Gives each device an IP automatically.
+    - Prevents IP conflicts.
+    - Provides subnet mask, default gateway, DNS.
+- Usually runs on the home router or a dedicated server.
+
+## Lesson 11: NAT & IP Mapping
+- **NAT (Network Address Translation)**: Allows multiple private IPs to share one public IP.
+- **IP Mapping**: Forwards internet traffic to a specific internal device (port forwarding).
+- Used for: Security cameras, game servers, remote desktop, hosting.
+
+| Feature | NAT | IP Mapping |
+|---------|-----|-------------|
+| Direction | Inside → Outside | Outside → Inside |
+| Always active | Yes | Only when needed |
+| Purpose | General internet sharing | Hosting services |
+
+## Lesson 12: ISP (Internet Service Provider)
+- **ISP**: Company that provides internet access (e.g., Vodafone, WE).
+- Provides: Internet connection, Public IP, specific speed.
+- Acts as the gateway from your local network to the global internet.
+
+## Lesson 13: Ports & Socket
+- **Port**: A number identifying a specific process/service on a device (e.g., Web Server on port 80, Email on port 25).
+- **Socket**: IP Address + Port Number. Uniquely identifies a connection.
+- Example: `192.168.1.10:80`
+
+## Lesson 14: Subnet Mask & CIDR
+- **IP is split into**:
+    - Network ID (identifies the network)
+    - Host ID (identifies the device inside the network)
+- **Subnet Mask**: Determines which part is Network and which is Host.
+    - Example: IP `192.168.1.10` + Mask `255.255.255.0` → Network `192.168.1`, Host `10`
+- **CIDR (Classless Inter-Domain Routing)** : Short form: `192.168.1.10/24` (24 bits for network).
+
+## Lesson 15: What is MAC Address?
+- **MAC Address**: Permanent, unique hardware identifier for any network-capable device.
+- **IP vs. MAC**:
+    - IP = temporary address (like your current location).
+    - MAC = permanent identity (like your national ID).
+- Format: Hexadecimal, 6 groups (e.g., `00:1A:2B:3C:4D:5E`).
+- Used **only inside the local network** (LAN). For internet access, IP is used.
+
+## Lesson 16: VPN (Virtual Private Network)
+- **VPN**: Encrypted tunnel between your device and a VPN server.
+- **Without VPN**: ISP and websites see your real IP.
+- **With VPN**: Traffic is encrypted, IP is hidden, appears as VPN server's location.
+- **Uses**: Privacy, unblocking geo-restricted content, hiding from ISP, safe on public Wi-Fi.
+
+## Lesson 17: Internet vs. WWW
+- **Internet**: Global network of networks. Physical infrastructure (cables, routers, data centers).
+- **WWW (World Wide Web)** : Collection of linked web pages accessed via a browser. A service *on top* of the Internet.
+- **Analogy**: Internet = road network, WWW = destinations (buildings/malls).
+
+| | WWW | Internet |
+|--|-----|----------|
+| Invented | 1991 | 1960s |
+| Needs | Browser, HTTP, URL | Network connection |
+| Contains | Websites, pages | Global infrastructure |
+
+## Lesson 18: Browsers
+- **Browser**: Software to surf the internet (Chrome, Firefox, Edge, Safari).
+- **How it works**: You type a URL → Browser sends HTTP request to server → Server returns HTML file → Browser renders it visually.
+- **HTML**: Descriptive language, not a programming language.
+
+## Lesson 19: HTTP & HTTPS Protocols
+- **HTTP**: Protocol for transferring web pages (no encryption).
+- **HTTPS**: HTTP + Encryption (using SSL/TLS). Secure.
+- **Port**: HTTP = 80, HTTPS = 443.
+- **Browser alert**: "Not Secure" for HTTP sites.
+
+| Feature | HTTP | HTTPS |
+|---------|------|-------|
+| Security | No encryption | Encrypted (TLS) |
+| Port | 80 | 443 |
+| Status | Old standard | Current standard |
+
+## Lesson 20: What is a Domain Name?
+- **Domain Name**: Human-readable name mapped to an IP address (e.g., `facebook.com` → `31.13.79.254`).
+- **How it works**: You type domain → Browser asks DNS → DNS returns IP → Browser connects.
+- **Buying a domain**: Through Domain Registrars. Pay yearly. Example: `mywebsite.com`
+    - `mywebsite` = chosen name
+    - `com` = Top-Level Domain (TLD)
+
+## Lesson 21: DNS (Domain Name Server)
+- **DNS**: Translates domain names to IP addresses (like a phonebook).
+- **Why not memorize IPs?** IPs change, servers move, ISPs change.
+- **Process**:
+    1. Browser asks DNS: "What is `google.com` IP?"
+    2. DNS returns IP.
+    3. Browser connects.
+
+## Lesson 22: Sub Domain
+- **Subdomain**: Extra part added before the main domain to organize content.
+- Example: `blog.programmingadvices.com`
+    - `blog` = subdomain
+    - `programmingadvices` = domain
+    - `com` = TLD
+- Subdomains are free (no need to buy new domain). Can point to different servers.
+- Example: `shop.example.com` (different server) vs `blog.example.com`
+
+## Lesson 23: URL (Uniform Resource Locator)
+- **URL**: Complete address to a resource on the internet (webpage, image, file, API).
+- Example: `https://www.google.com/index.html`
+    - `https://` → Protocol
+    - `www.google.com` → Domain Name
+    - `/index.html` → Path
+
+## Lesson 24: FTP (File Transfer Protocol)
+- **FTP**: Protocol for transferring files between devices.
+- **Uses**: Uploading website files, managing shared files, backups.
+- **Advantages**:
+    - Transfer many files at once.
+    - Resume interrupted downloads.
+    - Schedule transfers.
+    - No file size limit (practically).
+- **How**: FTP client (e.g., FileZilla) ↔ FTP server.
+
+## Lesson 25: What is API?
+- **API (Application Programming Interface)** : Allows apps to talk to each other (like a waiter).
+- Example: Weather app → calls API → API gets data from server → returns to app.
+- **Why use API?**
+    - Don't rebuild common features (e.g., Google Maps API).
+    - Security (app doesn't directly touch your bank).
+    - Easier integration across devices.
+- Often returns data in JSON format.
+
+## Lesson 26: What is XML?
+- **XML (eXtensible Markup Language)** : Language to structure and store data using custom tags.
+- **Example**:
+    ```xml
+    <employee>
+        <name>Ahmed Ali</name>
+        <age>28</age>
+        <job>Developer</job>
+    </employee>
+    ```
+- **Uses**: Data exchange between old systems, config files, Office files (docx, xlsx), SOAP APIs.
+- **Cons**: Heavier, slower than JSON.
+
+## Lesson 27: What is JSON?
+- **JSON (JavaScript Object Notation)** : Lightweight way to structure data using key:value pairs.
+- **Example**:
+    ```json
+    {
+        "name": "Ahmed Ali",
+        "age": 28,
+        "job": "Developer"
+    }
+    ```
+- **Comparison**:
+
+| Feature | XML | JSON |
+|---------|-----|------|
+| Format | Tags | Key:Value |
+| Size | Heavy | Light |
+| Speed | Slower | Faster |
+| Human-readable | Yes | Easier |
+| Used in | Older systems, SOAP | Modern APIs, mobile/web |
+
+## Lesson 28: What is GUID?
+- **GUID (Globally Unique Identifier)** : 128-bit unique ID (e.g., `550e8400-e29b-41d4-a716-446655440000`).
+- **Format**: 32 hex digits in 5 groups (8-4-4-4-12).
+- **Advantages**:
+    - Unique across the whole world.
+    - No central coordination needed.
+    - Suitable for distributed systems.
+- **Use**: Primary keys in databases, API request IDs, distributed systems.
+
+## Lesson 29: 3-Tier Architecture
+- **3-Tier Architecture**: Divides application into 3 independent layers.
+- **Tiers**:
+    1. **Presentation Tier** (UI) – what the user sees (web page, mobile screen).
+    2. **Business Logic Tier** – contains rules and calculations (e.g., "is login valid?").
+    3. **Data Tier** – database (stores/retrieves data).
+- **Benefits**:
+    - Separation of concerns.
+    - Easy to modify one tier without affecting others.
+    - Easier testing and scaling.
+- **Analogy**: Restaurant
+    - Presentation = you (customer)
+    - Business Logic = waiter
+    - Data = kitchen/storage
