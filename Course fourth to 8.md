@@ -9082,3 +9082,2958 @@ Here are the **concepts** extracted from the provided Arabic text, rewritten as 
     - Presentation = you (customer)
     - Business Logic = waiter
     - Data = kitchen/storage
+
+
+
+    ---
+    # Course 10
+    # OOP Principles + Glossary of Programming Terminology
+
+> A Professional Guide to Object-Oriented Programming in C#
+
+---
+
+## 📚 Table of Contents
+
+| Lesson | Topic |
+|--------|-------|
+| 1 | What is OOP and Why? |
+| 2 | Classes and Objects |
+| 3 | Class Members |
+| 4 | Object In Memory |
+| 5 | Access Specifiers / Modifiers |
+| 6 | Properties Set and Get |
+| 7 | Read Only Property |
+| 8 | Properties Set and Get through "=" |
+| 9 | Encapsulation |
+| 10 | Abstraction |
+| 11-12 | Project 1: Calculator |
+| 13 | Constructors |
+| 14 | Copy Constructors |
+| 15 | Destructors |
+| 16 | Static Members (Variable) |
+| 17 | Static Methods (Functions) |
+| 18-19 | Project 2: Person Exercise |
+| 20 | Inheritance |
+| 21 | Parameterized Constructor of Base Class |
+| 22 | Function Overriding |
+| 23 | Multi-Level Inheritance |
+| 24 | Access Specifiers in Inheritance |
+| 25 | Inheritance Visibility Modes |
+| 26 | Inheritance Types |
+| 27 | Up Casting vs Down Casting |
+| 28 | Virtual Functions |
+| 29 | Static/Early vs Dynamic/Late Binding |
+| 30 | Polymorphism |
+| 31 | Interfaces: Pure Virtual Functions & Abstract Classes |
+| 32 | Friend Classes |
+| 33 | Friend Function |
+| 34 | Structure Inside Class |
+| 35 | Nested Classes |
+| 36 | Separate Classes In Libraries |
+| 37 | 'this' Pointer |
+| 38-41 | String & Date Library Projects |
+| 42 | Class vs Structure |
+
+---
+
+## 📖 Programming Terminology Table
+
+| Term | Description |
+|------|-------------|
+| **OOP** | Object Oriented Programming |
+| **Class** | A blueprint/template for creating objects |
+| **Object** | An instance of a class |
+| **Members** | Variables and Methods inside a class |
+| **Method** | A function or procedure inside a class |
+| **Access Specifiers** | Public, Private, Protected |
+| **Private Modifier** | Accessible only inside the class |
+| **Protected Modifier** | Accessible inside class and inherited classes |
+| **Public Modifier** | Accessible from anywhere |
+| **Property** | A wrapper for private variables with Get/Set methods |
+| **Property Set** | Function to modify a private variable |
+| **Property Get** | Function to retrieve a private variable |
+| **Encapsulation** | Wrapping data and methods together under a single unit |
+| **Abstraction** | Hiding implementation details from the user |
+| **Constructor** | A method called automatically when an object is created |
+| **Destructor** | A method called when an object is destroyed (~ClassName) |
+| **Static Variable** | A variable shared across all objects of a class |
+| **Static Function** | A method callable without an object instance |
+| **Inheritance** | A class inheriting properties from another class |
+| **Base Class / Super Class** | The class being inherited from |
+| **Derived Class / Sub Class** | The class that inherits |
+| **Function Overriding** | Redefining a base class function in derived class |
+| **Polymorphism** | The ability to take many forms |
+| **Up Casting** | Converting derived object to base object |
+| **Down Casting** | Converting base object to derived object |
+| **Virtual Functions** | Functions that support dynamic binding |
+| **Static/Early Binding** | Address binding at compile time |
+| **Dynamic/Late Binding** | Address binding at runtime |
+| **Pure Virtual Function** | Virtual function with = 0, makes class abstract |
+| **Abstract Class** | Class with at least one pure virtual function |
+| **Friend Class** | Class granted access to private/protected members |
+| **Friend Function** | Non-member function granted access to private members |
+| **Inner Class** | A class defined inside another class |
+| **Enclosing Class** | The class that contains an inner class |
+| **'this' Pointer** | Pointer referring to the current object |
+
+---
+
+## 🎯 OOP Principles (4 Pillars)
+
+| Principle | Description |
+|-----------|-------------|
+| **Encapsulation** | Bundling data and methods together, hiding internal state |
+| **Abstraction** | Hiding complex implementation, showing only essential features |
+| **Inheritance** | Creating new classes based on existing classes |
+| **Polymorphism** | Ability to present the same interface for different data types |
+
+---
+
+# Lesson 1: What is OOP and Why?
+
+## Procedural Programming (FP - Functional Programming)
+
+- A program is a collection of procedures and functions
+- Functions are called when needed
+- In large projects (e.g., University System), many functions are written
+- Functions call other functions like Lego blocks
+- Problems with FP:
+  - Functions become disorganized
+  - Code repetition is common
+  - Large systems become nearly impossible to maintain
+  - The issue is NOT the number of functions, but how they are organized
+
+## Object Oriented Programming (OOP)
+
+- OOP changes how you think about code
+- You interact with code as if interacting with real life
+- Examples: Students, Courses, Employees, Departments, Faculties
+- Think from top to bottom (Objects), not bottom to top (Functions)
+- **Object** = Contains related functions (Methods) under one unit
+
+### OOP Advantages
+
+- You interact with a **Class** (blueprint) through **Objects**
+- Reduces code repetition
+- Provides code security and control
+- Easier code maintenance
+- Gives you more control over your code
+
+### Programming Paradigms
+
+- **FP** = Functional Programming
+- **OOP** = Object Oriented Programming
+
+---
+
+# Lesson 2: Classes and Objects
+
+## Class vs Object
+
+| Concept | Description |
+|---------|-------------|
+| **Class** | A data type, blueprint, or template |
+| **Object** | An instance/variable of a class type |
+
+## Class Naming Convention
+
+- Start class names with `cls` prefix (e.g., `clsPerson`)
+- Helps distinguish classes in code
+
+## Class Example in C#
+
+```csharp
+using System;
+
+namespace OOP_Lessons
+{
+    // Class definition (blueprint)
+    class clsPerson
+    {
+        // Data Members (Fields)
+        public string FirstName;
+        public string LastName;
+
+        // Method (Function Member)
+        public string FullName()
+        {
+            return FirstName + " " + LastName;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Creating an Object (Instance) of the class
+            clsPerson Person1 = new clsPerson();
+            Person1.FirstName = "Mohammed";
+            Person1.LastName = "Abu-Hadhoud";
+
+            Console.WriteLine(Person1.FullName());
+
+            // String is also a class!
+            string S1 = "Saeed";
+            Console.WriteLine($"{S1}\nSize = {S1.Length}");
+
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+### Key Points
+
+- By default, everything inside a class is **Private**
+- Private members cannot be accessed outside the class
+- Use `public` to allow access from outside
+- A class is a **Data Type**
+- An **Object** is an **Instance** of a class
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| What is Class? | Class is a Datatype / Blueprint |
+| Can you access Class members directly? | No, you must create an Object first |
+| How to access member function? | `ObjectName.FunctionName();` |
+| Can you access Private members through Object? | No, only Public members |
+| What is a Method? | Any Function or Procedure inside a Class |
+| C vs C++ difference | C is procedural (no OOP), C++ supports both procedural and OOP |
+| Object is? | Instance of Class |
+| Class Members are? | Any Variable or Function inside a Class |
+
+---
+
+# Lesson 3: Class Members
+
+## Types of Members
+
+```csharp
+class clsPerson
+{
+    // Private member (cannot be accessed outside)
+    private int x;
+
+    // Public members (can be accessed anywhere)
+    public string FirstName;
+    public string LastName;
+
+    // Method Member
+    public string FullName()
+    {
+        return FirstName + " " + LastName;
+    }
+}
+```
+
+### Member Types
+
+| Member Type | Description |
+|-------------|-------------|
+| **Data Member** | Variable that holds data inside a class |
+| **Function Member (Method)** | Function or Procedure inside a class |
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Data Member is? | Any Variable inside a Class that holds data |
+| Function Member is? | Any Function or Procedure inside a Class |
+| Class Members are? | Data Members + Function Members |
+
+---
+
+# Lesson 4: Object In Memory
+
+## Memory Allocation
+
+- Each object has its own space in memory for **Data Members**
+- **Function Members** are shared among all objects (one space in memory)
+
+```csharp
+class clsPerson
+{
+    public string FirstName;
+    public string LastName;
+
+    public string FullName()
+    {
+        return FirstName + " " + LastName;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsPerson Person1 = new clsPerson();
+        clsPerson Person2 = new clsPerson();
+
+        Person1.FirstName = "Mohammed";
+        Person1.LastName = "Abu-Hadhoud";
+
+        Person2.FirstName = "Saeed";
+        Person2.LastName = "Omar";
+
+        Console.WriteLine($"Person1: {Person1.FullName()}");
+        Console.WriteLine($"Person2: {Person2.FullName()}");
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Every object has its own space for Data & Function Members | False |
+| Every object has its own space for only Data Members | True |
+| Function Members are shared among all objects | True |
+
+---
+
+# Lesson 5: Access Specifiers / Modifiers
+
+## Types of Access Specifiers
+
+| Specifier | Accessibility |
+|-----------|---------------|
+| **Private** | Only inside the same class |
+| **Protected** | Inside the class + all derived/inherited classes |
+| **Public** | Anywhere (inside/outside/inherited classes) |
+
+```csharp
+class clsPerson
+{
+    // Private - only accessible inside this class
+    private int Variabl1 = 5;
+    private int Function1() { return 40; }
+
+    // Protected - accessible inside this class and inherited classes
+    protected int Variabl2 = 100;
+    protected int Function2() { return 50; }
+
+    // Public - accessible from anywhere
+    public string FirstName;
+    public string LastName;
+
+    public string FullName()
+    {
+        return FirstName + " " + LastName;
+    }
+
+    public float Function3()
+    {
+        // Can access private and protected members from inside the class
+        return Function1() * Variabl1 * Variabl2;
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Access modifiers set accessibility of classes, methods, and members | True |
+| Which are Access Specifiers? | Private, Protected, Public |
+| Private members can be accessed through object | False |
+| Private members accessible by inherited classes | False |
+| Private members accessible only from inside class | True |
+| Which specifier for "private to outside, public to inherited"? | Protected |
+| Protected members accessible from outside through object | False |
+| OOP is more secured because you can hide members | True |
+
+---
+
+# Lesson 6: Properties (Set and Get)
+
+## Why Properties?
+
+- Direct access to public variables is not recommended in OOP
+- Properties use two functions:
+  1. **Set** - to modify a variable
+  2. **Get** - to retrieve a variable
+
+## Property Benefits
+
+- Provides security for Data Members
+- Prevents modification without permission
+- Increases code reusability
+- Enables **Audit Trailing** (saving old values before modification)
+
+```csharp
+class clsPerson
+{
+    // Private fields (encapsulated)
+    private string _FirstName;
+    private string _LastName;
+
+    // Property Set
+    public void SetFirstName(string FirstName)
+    {
+        _FirstName = FirstName;
+    }
+
+    // Property Get
+    public string GetFirstName()
+    {
+        return _FirstName;
+    }
+
+    // Property Set
+    public void SetLastName(string LastName)
+    {
+        _LastName = LastName;
+    }
+
+    // Property Get
+    public string GetLastName()
+    {
+        return _LastName;
+    }
+
+    public string FullName()
+    {
+        return _FirstName + " " + _LastName;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsPerson Person1 = new clsPerson();
+
+        Person1.SetFirstName("Mohammed");
+        Person1.SetLastName("Abu-Hadhoud");
+
+        Console.WriteLine($"First Name: {Person1.GetFirstName()}");
+        Console.WriteLine($"Last Name: {Person1.GetLastName()}");
+        Console.WriteLine($"Full Name: {Person1.FullName()}");
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Properties are Functions that allow updating Private Members | True |
+| Properties are two functions: Set and Get | True |
+| To update data, write a Set property function | True |
+| To retrieve data, write a Get property function | True |
+| Both Set and Get use a private data member | True |
+
+---
+
+# Lesson 7: Read Only Property
+
+## Types of Properties
+
+| Type | Description | Methods |
+|------|-------------|---------|
+| **Read Only** | Can only read, cannot modify | Get only |
+| **Write Only** | Can only modify, cannot read | Set only |
+| **Read/Write** | Can both read and modify | Get + Set |
+
+```csharp
+class clsPerson
+{
+    private int _ID = 10;
+
+    // Read Only Property (only Get, no Set)
+    public int ID()
+    {
+        return _ID;
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Read Only Property implements only Get function | True |
+
+---
+
+# Lesson 8: Properties Set and Get through "=" (C# Property Syntax)
+
+In C#, we have a cleaner syntax for properties:
+
+```csharp
+class clsPerson
+{
+    private string _FirstName;
+
+    // Property Set
+    public void SetFirstName(string FirstName)
+    {
+        _FirstName = FirstName;
+    }
+
+    // Property Get
+    public string GetFirstName()
+    {
+        return _FirstName;
+    }
+
+    // Auto-implemented property (C# style)
+    public string FirstName { get; set; }
+}
+
+// Or using the full property syntax:
+class clsPersonModern
+{
+    private string _firstName;
+
+    public string FirstName
+    {
+        get { return _firstName; }
+        set { _firstName = value; }
+    }
+}
+```
+
+### Using Properties
+
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsPerson Person1 = new clsPerson();
+        
+        // Using property like a field
+        Person1.FirstName = "Mohammed";
+        Console.WriteLine(Person1.FirstName);
+    }
+}
+```
+
+---
+
+# Lesson 9: Encapsulation (First Principle)
+
+## Definition
+
+> **Encapsulation** is wrapping up data and information under a single unit. In OOP, it binds together the data and the functions that manipulate them.
+
+### Key Concepts
+
+- All members (variables and methods) are contained within a class
+- Data Members (Variables) cannot be accessed directly outside the class
+- Access is provided only through methods/properties
+
+```csharp
+class clsBankAccount
+{
+    // Encapsulated data
+    private decimal _balance;
+
+    // Public method to access private data
+    public void Deposit(decimal amount)
+    {
+        if (amount > 0)
+            _balance += amount;
+    }
+
+    public decimal GetBalance()
+    {
+        return _balance;
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Encapsulation is wrapping data under a single unit | True |
+| Encapsulation binds data and functions together | True |
+
+---
+
+# Lesson 10: Abstraction (Second Principle)
+
+## Definition
+
+> **Abstraction** displays only the relevant attributes of objects and hides unnecessary details.
+
+### Real-world Example
+
+- Camera button: You press "Take Picture" - you don't need to know how the lens works
+- String methods: `S1.Length` - you don't need to know how it calculates
+
+### How to Achieve Abstraction
+
+- Through **Private Members** only
+- Showing only what the user needs
+
+```csharp
+class clsCalculator
+{
+    // Hidden implementation details
+    private float _Result = 0;
+    
+    // Public interface (what user sees)
+    public float GetFinalResults()
+    {
+        return _Result;
+    }
+    
+    public void Add(float Number)
+    {
+        _Result += Number;
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Abstraction displays relevant attributes and hides unnecessary details | True |
+| You achieve Abstraction through | Private Members Only |
+
+---
+
+# Lesson 11-12: Project 1 - Calculator
+
+## Requirements
+
+```
+Result After Adding 10 is: 10
+Result After Adding 100 is: 110
+Result After Subtracting 20 is: 90
+Result After Dividing 0 is: 90
+Result After Dividing 2 is: 45
+Result After Multiplying 3 is: 135
+Result After Cancelling Last Operation is: 45
+Result After Clear is: 0
+```
+
+## Solution
+
+```csharp
+using System;
+
+namespace CalculatorProject
+{
+    class clsCalculator
+    {
+        // Private members (Abstraction & Encapsulation)
+        private float _Result = 0;
+        private float _LastNumber = 0;
+        private string _LastOperation = "Clear";
+        private float _PreviousResult = 0;
+
+        // Helper method
+        private bool _IsZero(float Number)
+        {
+            return (Number == 0);
+        }
+
+        // Public methods (Interface)
+        public void Add(float Number)
+        {
+            _LastNumber = Number;
+            _PreviousResult = _Result;
+            _LastOperation = "Adding";
+            _Result += Number;
+        }
+
+        public void Subtract(float Number)
+        {
+            _LastNumber = Number;
+            _PreviousResult = _Result;
+            _LastOperation = "Subtracting";
+            _Result -= Number;
+        }
+
+        public void Divide(float Number)
+        {
+            _LastNumber = Number;
+            if (_IsZero(Number))
+            {
+                Number = 1;
+            }
+            _PreviousResult = _Result;
+            _LastOperation = "Dividing";
+            _Result /= Number;
+        }
+
+        public void Multiply(float Number)
+        {
+            _LastNumber = Number;
+            _LastOperation = "Multiplying";
+            _PreviousResult = _Result;
+            _Result *= Number;
+        }
+
+        public float GetFinalResults()
+        {
+            return _Result;
+        }
+
+        public void Clear()
+        {
+            _LastNumber = 0;
+            _PreviousResult = 0;
+            _LastOperation = "Clear";
+            _Result = 0;
+        }
+
+        public void CancelLastOperation()
+        {
+            _LastNumber = 0;
+            _LastOperation = "Cancelling Last Operation";
+            _Result = _PreviousResult;
+        }
+
+        public void PrintResult()
+        {
+            Console.WriteLine($"Result After {_LastOperation} {_LastNumber} is: {_Result}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            clsCalculator Calculator1 = new clsCalculator();
+
+            Calculator1.Clear();
+            Calculator1.Add(10);
+            Calculator1.PrintResult();
+
+            Calculator1.Add(100);
+            Calculator1.PrintResult();
+
+            Calculator1.Subtract(20);
+            Calculator1.PrintResult();
+
+            Calculator1.Divide(0);
+            Calculator1.PrintResult();
+
+            Calculator1.Divide(2);
+            Calculator1.PrintResult();
+
+            Calculator1.Multiply(3);
+            Calculator1.PrintResult();
+
+            Calculator1.CancelLastOperation();
+            Calculator1.PrintResult();
+
+            Calculator1.Clear();
+            Calculator1.PrintResult();
+
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+---
+
+# Lesson 13: Constructors
+
+## Definition
+
+> A **Constructor** is a special method that is called automatically when an object is created.
+
+### Types of Constructors
+
+| Type | Description |
+|------|-------------|
+| **Default Constructor** | No parameters, provided by compiler if not written |
+| **Parameterized Constructor** | Has parameters to initialize object with values |
+
+## Constructor Characteristics
+
+- Same name as the class
+- No return type (not even void)
+- Should be public
+- Can be overloaded
+
+```csharp
+class clsAddress
+{
+    private string _AddressLine1;
+    private string _AddressLine2;
+    private string _POBox;
+    private string _ZipCode;
+
+    // Parameterized Constructor
+    public clsAddress(string AddressLine1, string AddressLine2, string POBox, string ZipCode)
+    {
+        _AddressLine1 = AddressLine1;
+        _AddressLine2 = AddressLine2;
+        _POBox = POBox;
+        _ZipCode = ZipCode;
+    }
+
+    // Properties
+    public void SetAddressLine1(string AddressLine1) { _AddressLine1 = AddressLine1; }
+    public string GetAddressLine1() { return _AddressLine1; }
+
+    public void SetAddressLine2(string AddressLine2) { _AddressLine2 = AddressLine2; }
+    public string GetAddressLine2() { return _AddressLine2; }
+
+    public void SetPOBox(string POBox) { _POBox = POBox; }
+    public string GetPOBox() { return _POBox; }
+
+    public void SetZipCode(string ZipCode) { _ZipCode = ZipCode; }
+    public string GetZipCode() { return _ZipCode; }
+
+    public void Print()
+    {
+        Console.WriteLine("\nAddress Details:");
+        Console.WriteLine("------------------------");
+        Console.WriteLine($"AddressLine1: {_AddressLine1}");
+        Console.WriteLine($"AddressLine2: {_AddressLine2}");
+        Console.WriteLine($"POBox: {_POBox}");
+        Console.WriteLine($"ZipCode: {_ZipCode}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Creating object with constructor parameters
+        clsAddress Address1 = new clsAddress("Queen Alia Street", "B 303", "11192", "5555");
+        Address1.Print();
+        
+        // This would cause error (no default constructor)
+        // clsAddress Address2 = new clsAddress();
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Constructor is called automatically when object is created | True |
+| Constructor has same name as class, no return type, should be public | True |
+| Do you always need to write a constructor? | No, compiler writes default one |
+| Parameterized constructor overrides default constructor | True |
+
+---
+
+# Lesson 14: Copy Constructors
+
+## Definition
+
+> A **Copy Constructor** initializes a new object by copying members from an existing object of the same class.
+
+```csharp
+class clsAddress
+{
+    private string _AddressLine1;
+    private string _AddressLine2;
+    private string _POBox;
+    private string _ZipCode;
+
+    // Parameterized Constructor
+    public clsAddress(string AddressLine1, string AddressLine2, string POBox, string ZipCode)
+    {
+        _AddressLine1 = AddressLine1;
+        _AddressLine2 = AddressLine2;
+        _POBox = POBox;
+        _ZipCode = ZipCode;
+    }
+
+    // Copy Constructor
+    public clsAddress(clsAddress old_obj)
+    {
+        _AddressLine1 = old_obj.GetAddressLine1();
+        _AddressLine2 = old_obj.GetAddressLine2();
+        _POBox = old_obj.GetPOBox();
+        _ZipCode = old_obj.GetZipCode();
+    }
+
+    // Properties (Get methods)
+    public string GetAddressLine1() { return _AddressLine1; }
+    public string GetAddressLine2() { return _AddressLine2; }
+    public string GetPOBox() { return _POBox; }
+    public string GetZipCode() { return _ZipCode; }
+
+    public void Print()
+    {
+        Console.WriteLine($"Address: {_AddressLine1}, {_AddressLine2}, {_POBox}, {_ZipCode}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsAddress Address1 = new clsAddress("Queen Alia Street", "B 303", "11192", "5555");
+        
+        // Using copy constructor
+        clsAddress Address2 = new clsAddress(Address1);
+        
+        Address1.Print();
+        Address2.Print();
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Copy constructor initializes members by copying existing object | True |
+| Process is called copy initialization | True |
+| Also called member-wise initialization | True |
+| Can be defined explicitly by programmer | True |
+| Do you always need to implement copy constructor? | No, compiler does it for you |
+| Constructor types | Default, Parameterized, Copy |
+
+---
+
+# Lesson 15: Destructors
+
+## Definition
+
+> A **Destructor** is a special method called automatically when an object is destroyed.
+
+### Characteristics
+
+- Same name as class with tilde (~) prefix
+- No parameters
+- No return type
+- Cannot be overloaded (only one destructor per class)
+- Called when object goes out of scope
+
+### Uses
+
+- Closing database connections
+- Releasing file handles
+- Deleting pointers
+
+```csharp
+using System;
+
+class clsPerson
+{
+    public string FullName;
+
+    // Constructor
+    public clsPerson()
+    {
+        FullName = "Mohammed Abu-Hadhoud";
+        Console.WriteLine("\nHi, I'm Constructor");
+    }
+
+    // Destructor (Finalizer in C#)
+    ~clsPerson()
+    {
+        Console.WriteLine("\nHi, I'm Destructor");
+    }
+}
+
+class Program
+{
+    static void Fun1()
+    {
+        clsPerson Person1 = new clsPerson();
+        // Destructor called when exiting function
+    }
+
+    static void Main(string[] args)
+    {
+        Fun1();
+        // Force garbage collection (not recommended normally)
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        
+        Console.ReadLine();
+    }
+}
+```
+
+**Note:** In C#, destructors are called **Finalizers**. They are called by the Garbage Collector, not deterministically like in C++.
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Destructor is invoked automatically when object is destroyed | True |
+| Destructor has same name with ~ prefix | True |
+| Can you define more than one destructor? | False |
+| Destructor cannot be overloaded | True |
+| Destructor takes no arguments and returns no value | True |
+
+---
+
+# Lesson 16: Static Members (Variables)
+
+## Definition
+
+> A **Static Variable** is shared across all objects of a class. Its lifetime is the entire program execution.
+
+### Key Points
+
+- Only one copy exists in memory
+- All objects share the same static variable
+- If one object modifies it, all objects see the change
+- Must be initialized outside the class
+- Accessible through class name or object
+
+```csharp
+class clsA
+{
+    // Instance variable - each object has its own copy
+    public int var;
+    
+    // Static variable - shared among all objects
+    public static int counter;
+
+    // Constructor
+    public clsA()
+    {
+        counter++;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine($"var = {var}");
+        Console.WriteLine($"counter = {counter}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsA A1 = new clsA();
+        clsA A2 = new clsA();
+        clsA A3 = new clsA();
+
+        A1.var = 10;
+        A2.var = 20;
+        A3.var = 30;
+
+        A1.Print();
+        A2.Print();
+        A3.Print();
+
+        // Modifying static member through one object
+        A1.counter = 500;
+
+        Console.WriteLine("\nafter changing the static member counter in one object:\n");
+        
+        A1.Print();
+        A2.Print();
+        A3.Print();
+    }
+}
+```
+
+### Output Explanation
+
+- `var` is different for each object (10, 20, 30)
+- `counter` is shared (starts at 3, becomes 500 for all)
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Static Member is shared for all objects | True |
+| Each object has its own static members | False |
+| Static members are at class level, not object level | True |
+| Static Members are accessible from all objects | True |
+
+---
+
+# Lesson 17: Static Methods (Functions)
+
+## Definition
+
+> **Static Methods** can be called at the class level without creating an object.
+
+### Key Points
+
+- Can be called through class name: `ClassName.MethodName()`
+- Can also be called through objects
+- Can only access static members (not instance members)
+
+```csharp
+class clsB
+{
+    // Static method - can be called without object
+    public static int Function1()
+    {
+        return 10;
+    }
+
+    // Instance method - requires object
+    public int Function2()
+    {
+        return 20;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Calling static method directly via class
+        Console.WriteLine(clsB.Function1());
+
+        // Creating objects
+        clsB B1 = new clsB();
+        clsB B2 = new clsB();
+
+        // Static method can also be called through object
+        Console.WriteLine(B1.Function1());
+        
+        // Instance method requires object
+        Console.WriteLine(B1.Function2());
+        Console.WriteLine(B2.Function1());
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Static Functions can be called at class level without object | True |
+| Static Functions cannot be called through object | False |
+| Static Functions can be called through object and class | True |
+| Can static function access non-static members? | No, only static members |
+
+---
+
+# Lesson 18-19: Project 2 - Person Exercise
+
+## Requirements
+
+```
+Info:
+___________________
+ID : 10
+FirstName: Saeed
+LastName : Omar
+Full Name: Saeed Omar
+Email : My@gmail.com
+Phone : 057842937
+___________________
+
+The following message sent successfully to email: My@gmail.com
+Subject: Hi
+Body: How are you
+
+The following SMS sent successfully to phone: 057842937
+How are you
+```
+
+## Solution
+
+```csharp
+using System;
+
+class clsPerson
+{
+    // Private fields
+    private int _ID;
+    private string _FirstName;
+    private string _LastName;
+    private string _Email;
+    private string _Phone;
+
+    // Parameterized Constructor
+    public clsPerson(int ID, string FirstName, string LastName, string Email, string Phone)
+    {
+        _ID = ID;
+        _FirstName = FirstName;
+        _LastName = LastName;
+        _Email = Email;
+        _Phone = Phone;
+    }
+
+    // Read Only Property (no Set)
+    public int ID()
+    {
+        return _ID;
+    }
+
+    // Property Set & Get for FirstName
+    public void SetFirstName(string FirstName) { _FirstName = FirstName; }
+    public string GetFirstName() { return _FirstName; }
+
+    // Property Set & Get for LastName
+    public void SetLastName(string LastName) { _LastName = LastName; }
+    public string GetLastName() { return _LastName; }
+
+    public string FullName()
+    {
+        return _FirstName + " " + _LastName;
+    }
+
+    // Property Set & Get for Email
+    public void SetEmail(string Email) { _Email = Email; }
+    public string GetEmail() { return _Email; }
+
+    // Property Set & Get for Phone
+    public void SetPhone(string Phone) { _Phone = Phone; }
+    public string GetPhone() { return _Phone; }
+
+    public void Print()
+    {
+        Console.WriteLine("\nInfo:");
+        Console.WriteLine("___________________");
+        Console.WriteLine($"ID : {_ID}");
+        Console.WriteLine($"FirstName: {_FirstName}");
+        Console.WriteLine($"LastName : {_LastName}");
+        Console.WriteLine($"Full Name: {FullName()}");
+        Console.WriteLine($"Email : {_Email}");
+        Console.WriteLine($"Phone : {_Phone}");
+        Console.WriteLine("___________________\n");
+    }
+
+    public void SendEmail(string Subject, string Body)
+    {
+        Console.WriteLine($"\nThe following message sent successfully to email: {_Email}");
+        Console.WriteLine($"Subject: {Subject}");
+        Console.WriteLine($"Body: {Body}");
+    }
+
+    public void SendPhone(string TextMessage)
+    {
+        Console.WriteLine($"\nThe following SMS sent successfully to phone: {_Phone}");
+        Console.WriteLine(TextMessage);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsPerson Person1 = new clsPerson(10, "Saeed", "Omar", "My@gmail.com", "057842937");
+        
+        Person1.Print();
+        Person1.SendEmail("Hi", "How are you ? ");
+        Person1.SendPhone("How are you ? ");
+        
+        Console.ReadLine();
+    }
+}
+```
+
+---
+
+## Homework: Employee Exercise
+
+### Requirements
+
+```
+Info:
+------------------------------------
+ID : 10
+FirstName : Saeed
+LastName : Omar
+FullName : Saeed Omar
+Title : Developer
+Email : MySaeed@gmail.com
+Phone : 05784732837
+Salary : 2000
+Department : IT
+------------------------------------
+```
+
+### Solution
+
+```csharp
+class clsEmployee
+{
+    private int _ID;
+    private string _FirstName;
+    private string _LastName;
+    private string _Title;
+    private string _Email;
+    private string _Phone;
+    private float _Salary;
+    private string _Department;
+
+    public clsEmployee(int ID, string FirstName, string LastName, string Title, 
+                       string Email, string Phone, float Salary, string Department)
+    {
+        _ID = ID;
+        _FirstName = FirstName;
+        _LastName = LastName;
+        _Title = Title;
+        _Email = Email;
+        _Phone = Phone;
+        _Salary = Salary;
+        _Department = Department;
+    }
+
+    // Properties (Get/Set)
+    public int GetID() { return _ID; }
+    
+    public void SetFirstName(string FirstName) { _FirstName = FirstName; }
+    public string GetFirstName() { return _FirstName; }
+    
+    public void SetLastName(string LastName) { _LastName = LastName; }
+    public string GetLastName() { return _LastName; }
+    
+    public void SetTitle(string Title) { _Title = Title; }
+    public string GetTitle() { return _Title; }
+    
+    public void SetEmail(string Email) { _Email = Email; }
+    public string GetEmail() { return _Email; }
+    
+    public void SetPhone(string Phone) { _Phone = Phone; }
+    public string GetPhone() { return _Phone; }
+    
+    public void SetSalary(float Salary) { _Salary = Salary; }
+    public float GetSalary() { return _Salary; }
+    
+    public void SetDepartment(string Department) { _Department = Department; }
+    public string GetDepartment() { return _Department; }
+
+    public string FullName()
+    {
+        return _FirstName + " " + _LastName;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine("\nInfo : ");
+        Console.WriteLine("------------------------------------");
+        Console.WriteLine($"ID : {_ID}");
+        Console.WriteLine($"FirstName : {_FirstName}");
+        Console.WriteLine($"LastName : {_LastName}");
+        Console.WriteLine($"FullName : {FullName()}");
+        Console.WriteLine($"Title : {_Title}");
+        Console.WriteLine($"Email : {_Email}");
+        Console.WriteLine($"Phone : {_Phone}");
+        Console.WriteLine($"Salary : {_Salary}");
+        Console.WriteLine($"Department : {_Department}");
+        Console.WriteLine("------------------------------------");
+    }
+
+    public void SendEmail(string Subject, string Body)
+    {
+        Console.WriteLine($"\nThe following message sent successfully to email: {_Email}");
+        Console.WriteLine($"Subject: {Subject}");
+        Console.WriteLine($"Body: {Body}");
+    }
+
+    public void SendPhone(string TextMessage)
+    {
+        Console.WriteLine($"\nThe following SMS sent successfully to phone: {_Phone}");
+        Console.WriteLine(TextMessage);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee(10, "Saeed", "Omar", "Developer", 
+                                                  "MySaeed@gmail.com", "05784732837", 
+                                                  2000, "IT");
+        
+        Employee1.Print();
+        Employee1.SendEmail("Hi", "How are you ?");
+        Employee1.SendPhone("How are you ?");
+        
+        Console.ReadLine();
+    }
+}
+```
+
+---
+
+# Lesson 20: Inheritance (Third Principle)
+
+## Definition
+
+> **Inheritance** is a mechanism where a new class (Derived/Sub Class) inherits properties and methods from an existing class (Base/Super Class).
+
+### Benefits
+
+- **Code Reusability** - Write once, use many times
+- **Maintenance** - Fix bugs in one place
+- **Updating** - Update in one location
+- **Organization** - Logical hierarchy
+
+### Inheritance Syntax
+
+```csharp
+class DerivedClass : BaseClass
+{
+    // Additional members
+}
+```
+
+### What is Inherited?
+
+- Public members ✅
+- Protected members ✅
+- Private members ❌ (not accessible directly)
+
+```csharp
+// Base Class (Super Class)
+class clsPerson
+{
+    private int _ID;
+    private string _FirstName;
+    private string _LastName;
+    private string _Email;
+    private string _Phone;
+
+    // Properties
+    public void SetFirstName(string FirstName) { _FirstName = FirstName; }
+    public string GetFirstName() { return _FirstName; }
+    
+    public void SetLastName(string LastName) { _LastName = LastName; }
+    public string GetLastName() { return _LastName; }
+    
+    public void SetEmail(string Email) { _Email = Email; }
+    public string GetEmail() { return _Email; }
+    
+    public void SetPhone(string Phone) { _Phone = Phone; }
+    public string GetPhone() { return _Phone; }
+
+    public string FullName()
+    {
+        return _FirstName + " " + _LastName;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine($"Name: {FullName()}, Email: {_Email}, Phone: {_Phone}");
+    }
+
+    public void SendEmail(string Subject, string Body)
+    {
+        Console.WriteLine($"Sending email to {_Email}: {Subject} - {Body}");
+    }
+}
+
+// Derived Class (Sub Class)
+class clsEmployee : clsPerson
+{
+    private string _Title;
+    private string _Department;
+    private float _Salary;
+
+    // Additional properties specific to Employee
+    public void SetTitle(string Title) { _Title = Title; }
+    public string GetTitle() { return _Title; }
+    
+    public void SetDepartment(string Department) { _Department = Department; }
+    public string GetDepartment() { return _Department; }
+    
+    public void SetSalary(float Salary) { _Salary = Salary; }
+    public float GetSalary() { return _Salary; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee();
+        
+        // Using inherited methods from clsPerson
+        Employee1.SetFirstName("Mohammed");
+        Employee1.SetLastName("Abu-Hadhoud");
+        Employee1.SetEmail("a@a.com");
+        
+        // Using Employee-specific methods
+        Employee1.SetSalary(5000);
+        
+        Console.WriteLine($"Salary is: {Employee1.GetSalary()}");
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Inheritance supports code reusability | True |
+| Class that inherits is called Subclass or Derived Class | True |
+| Class being inherited from is called Base Class or Superclass | True |
+| Derived Class and Sub Class are the same | True |
+| Base Class and Super Class are the same | True |
+| You can inherit only public and protected members | True |
+
+---
+
+# Lesson 21: Parameterized Constructor of the Base Class
+
+## The Problem
+
+When the base class has only a parameterized constructor, the derived class must explicitly call it.
+
+## Solution
+
+Use the `base` keyword to call the base class constructor.
+
+```csharp
+// Base Class
+class clsPerson
+{
+    private int _ID;
+    private string _FirstName;
+    private string _LastName;
+    private string _Email;
+    private string _Phone;
+
+    // Parameterized Constructor
+    public clsPerson(int ID, string FirstName, string LastName, string Email, string Phone)
+    {
+        _ID = ID;
+        _FirstName = FirstName;
+        _LastName = LastName;
+        _Email = Email;
+        _Phone = Phone;
+    }
+
+    // Properties
+    public int GetID() { return _ID; }
+    public string GetFirstName() { return _FirstName; }
+    public string GetLastName() { return _LastName; }
+    public string GetEmail() { return _Email; }
+    public string GetPhone() { return _Phone; }
+    
+    public string FullName() { return _FirstName + " " + _LastName; }
+}
+
+// Derived Class
+class clsEmployee : clsPerson
+{
+    private string _Title;
+    private string _Department;
+    private float _Salary;
+
+    // Parameterized Constructor with base class call
+    public clsEmployee(int ID, string FirstName, string LastName, string Email, string Phone,
+                       string Title, string Department, float Salary) 
+                       : base(ID, FirstName, LastName, Email, Phone)
+    {
+        _Title = Title;
+        _Department = Department;
+        _Salary = Salary;
+    }
+
+    // Additional properties
+    public string GetTitle() { return _Title; }
+    public string GetDepartment() { return _Department; }
+    public float GetSalary() { return _Salary; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee(10, "Mohammed", "Abu-Hadhoud", 
+                                                  "A@a.com", "8298982", 
+                                                  "CEO", "ProgrammingAdvices", 5000);
+        
+        // Accessing base class methods
+        Console.WriteLine($"Name: {Employee1.FullName()}");
+        Console.WriteLine($"Title: {Employee1.GetTitle()}");
+        Console.WriteLine($"Department: {Employee1.GetDepartment()}");
+        Console.WriteLine($"Salary: {Employee1.GetSalary()}");
+    }
+}
+```
+
+---
+
+# Lesson 22: Function Overriding
+
+## Definition
+
+> **Function Overriding** occurs when a derived class provides its own implementation of a method that already exists in the base class.
+
+```csharp
+// Base Class
+class clsPerson
+{
+    private int _ID;
+    private string _FirstName;
+    private string _LastName;
+    private string _Email;
+    private string _Phone;
+
+    public clsPerson(int ID, string FirstName, string LastName, string Email, string Phone)
+    {
+        _ID = ID;
+        _FirstName = FirstName;
+        _LastName = LastName;
+        _Email = Email;
+        _Phone = Phone;
+    }
+
+    public int GetID() { return _ID; }
+    public string GetFirstName() { return _FirstName; }
+    public string GetLastName() { return _LastName; }
+    public string GetEmail() { return _Email; }
+    public string GetPhone() { return _Phone; }
+    public string FullName() { return _FirstName + " " + _LastName; }
+
+    // Virtual method - can be overridden
+    public virtual void Print()
+    {
+        Console.WriteLine($"ID: {_ID}");
+        Console.WriteLine($"FirstName: {_FirstName}");
+        Console.WriteLine($"LastName: {_LastName}");
+        Console.WriteLine($"Full Name: {FullName()}");
+        Console.WriteLine($"Email: {_Email}");
+        Console.WriteLine($"Phone: {_Phone}");
+    }
+}
+
+// Derived Class
+class clsEmployee : clsPerson
+{
+    private string _Title;
+    private string _Department;
+    private float _Salary;
+
+    public clsEmployee(int ID, string FirstName, string LastName, string Email, string Phone,
+                       string Title, string Department, float Salary) 
+                       : base(ID, FirstName, LastName, Email, Phone)
+    {
+        _Title = Title;
+        _Department = Department;
+        _Salary = Salary;
+    }
+
+    public string GetTitle() { return _Title; }
+    public string GetDepartment() { return _Department; }
+    public float GetSalary() { return _Salary; }
+
+    // Override method
+    public override void Print()
+    {
+        base.Print();  // Call base class Print
+        Console.WriteLine($"Title: {_Title}");
+        Console.WriteLine($"Department: {_Department}");
+        Console.WriteLine($"Salary: {_Salary}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee(10, "Mohammed", "Abu-Hadhoud", 
+                                                  "A@a.com", "8298982", 
+                                                  "CEO", "ProgrammingAdvices", 5000);
+        
+        // Calls overridden Print method
+        Employee1.Print();
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Function Overriding: derived class overrides base class function | True |
+| Can you access overridden function from derived class object? | True |
+| Can you access base class function from inside derived class? | True |
+| How to access base function from derived class? | `base.FunctionName()` |
+
+---
+
+# Lesson 23: Multi-Level Inheritance
+
+## Definition
+
+> **Multi-Level Inheritance** occurs when a class inherits from another class, which itself inherits from another class.
+
+### Hierarchy Example
+
+```
+clsPerson (Base)
+    ↑
+clsEmployee (Derived from clsPerson)
+    ↑
+clsDeveloper (Derived from clsEmployee)
+```
+
+```csharp
+// Level 1: Base Class
+class clsPerson
+{
+    private int _ID;
+    private string _FirstName;
+    private string _LastName;
+    private string _Email;
+    private string _Phone;
+
+    public clsPerson(int ID, string FirstName, string LastName, string Email, string Phone)
+    {
+        _ID = ID;
+        _FirstName = FirstName;
+        _LastName = LastName;
+        _Email = Email;
+        _Phone = Phone;
+    }
+
+    public int GetID() { return _ID; }
+    public string GetFirstName() { return _FirstName; }
+    public string GetLastName() { return _LastName; }
+    public string GetEmail() { return _Email; }
+    public string GetPhone() { return _Phone; }
+    public string FullName() { return _FirstName + " " + _LastName; }
+    
+    public virtual void Print()
+    {
+        Console.WriteLine($"ID: {_ID}");
+        Console.WriteLine($"FirstName: {_FirstName}");
+        Console.WriteLine($"LastName: {_LastName}");
+        Console.WriteLine($"Full Name: {FullName()}");
+        Console.WriteLine($"Email: {_Email}");
+        Console.WriteLine($"Phone: {_Phone}");
+    }
+}
+
+// Level 2: Derived from clsPerson
+class clsEmployee : clsPerson
+{
+    private string _Title;
+    private string _Department;
+    private float _Salary;
+
+    public clsEmployee(int ID, string FirstName, string LastName, string Email, string Phone,
+                       string Title, string Department, float Salary) 
+                       : base(ID, FirstName, LastName, Email, Phone)
+    {
+        _Title = Title;
+        _Department = Department;
+        _Salary = Salary;
+    }
+
+    public string GetTitle() { return _Title; }
+    public string GetDepartment() { return _Department; }
+    public float GetSalary() { return _Salary; }
+
+    public override void Print()
+    {
+        Console.WriteLine("ID: " + GetID());
+        Console.WriteLine($"FirstName: {GetFirstName()}");
+        Console.WriteLine($"LastName: {GetLastName()}");
+        Console.WriteLine($"Full Name: {FullName()}");
+        Console.WriteLine($"Email: {GetEmail()}");
+        Console.WriteLine($"Phone: {GetPhone()}");
+        Console.WriteLine($"Title: {_Title}");
+        Console.WriteLine($"Department: {_Department}");
+        Console.WriteLine($"Salary: {_Salary}");
+    }
+}
+
+// Level 3: Derived from clsEmployee
+class clsDeveloper : clsEmployee
+{
+    private string _MainProgrammingLanguage;
+
+    public clsDeveloper(int ID, string FirstName, string LastName, string Email, string Phone,
+                        string Title, string Department, float Salary, string MainProgrammingLanguage)
+                        : base(ID, FirstName, LastName, Email, Phone, Title, Department, Salary)
+    {
+        _MainProgrammingLanguage = MainProgrammingLanguage;
+    }
+
+    public string GetMainProgrammingLanguage() { return _MainProgrammingLanguage; }
+
+    public override void Print()
+    {
+        base.Print();
+        Console.WriteLine($"Main Programming Language: {_MainProgrammingLanguage}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsDeveloper Developer1 = new clsDeveloper(10, "Mohammed", "Abu-Hadhoud", 
+                                                     "A@a.com", "8298982", 
+                                                     "Web Developer", "ProgrammingAdvices", 
+                                                     5000, "C#");
+        
+        Developer1.Print();
+        Developer1.SendPhone("Hi, I'm a developer :-)");
+    }
+}
+```
+
+---
+
+# Lesson 24: Access Specifiers in Inheritance (Review)
+
+## Access Specifiers Summary
+
+| Specifier | Inside Class | Derived Class | Outside Class |
+|-----------|--------------|---------------|---------------|
+| **private** | ✅ | ❌ | ❌ |
+| **protected** | ✅ | ✅ | ❌ |
+| **public** | ✅ | ✅ | ✅ |
+
+```csharp
+class clsA
+{
+    private int _Var1;           // Only inside clsA
+    private void Fun1() { }      // Only inside clsA
+
+    protected int Var2;          // Inside clsA and derived classes
+    protected void Fun2() { }    // Inside clsA and derived classes
+
+    public int Var3;             // Anywhere
+    public void Fun3() { }       // Anywhere
+}
+
+class clsB : clsA
+{
+    public void Func1()
+    {
+        // Can see protected and public members from base class
+        Console.WriteLine(Var2);  // protected - accessible
+        Fun2();                   // protected - accessible
+        Console.WriteLine(Var3);  // public - accessible
+        Fun3();                   // public - accessible
+        // Cannot access _Var1 or Fun1() - private
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsA A = new clsA();
+        A.Fun3();    // public - accessible
+        A.Var3 = 10; // public - accessible
+        
+        // Cannot access protected or private members from object
+    }
+}
+```
+
+---
+
+# Lesson 25: Inheritance Visibility Modes
+
+## Syntax
+
+```csharp
+class DerivedClass : VisibilityMode BaseClass
+{
+}
+```
+
+## Visibility Modes
+
+| Mode | Effect |
+|------|--------|
+| **public** | Preserves access levels (public → public, protected → protected) |
+| **private** | Everything becomes private to derived class |
+| **protected** | Everything becomes protected to derived class |
+
+## Visibility Matrix
+
+| Base Member | public Inheritance | private Inheritance | protected Inheritance |
+|-------------|-------------------|---------------------|----------------------|
+| private | Inaccessible | Inaccessible | Inaccessible |
+| protected | protected | private | protected |
+| public | public | private | protected |
+
+```csharp
+class clsA
+{
+    private int V1;
+    protected int V2;
+    public int V3;
+}
+
+// Public Inheritance
+class clsB : clsA
+{
+    // V2 and V3 are accessible (V2 protected, V3 public)
+}
+
+// Private Inheritance
+class clsC : private clsA
+{
+    // V2 and V3 become private to clsC only
+    // No one else can access them (not even further derived classes)
+}
+
+// Protected Inheritance
+class clsD : protected clsA
+{
+    // V2 and V3 become protected to clsD and its derived classes
+    // Objects cannot access them
+}
+```
+
+---
+
+# Lesson 26: Inheritance Types
+
+## Types of Inheritance
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **Single** | One derived class inherits from one base class | `clsB : clsA` |
+| **Multi-Level** | Chain of inheritance | `clsC : clsB : clsA` |
+| **Hierarchal** | Multiple derived classes from one base class | `clsB : clsA`, `clsC : clsA` |
+| **Multiple** | One class inherits from multiple base classes | `clsC : clsA, clsB` (C++ only) |
+| **Hybrid** | Combination of multiple and multi-level | Complex hierarchies (C++ only) |
+
+**Note:** C# and Java do NOT support Multiple Inheritance (multiple base classes). They use Interfaces instead.
+
+```csharp
+// Single Inheritance
+class clsEmployee : clsPerson { }
+
+// Multi-Level Inheritance
+class clsDeveloper : clsEmployee { }
+
+// Hierarchal Inheritance
+class clsStudent : clsPerson { }
+class clsTeacher : clsPerson { }
+
+// Multiple Inheritance is NOT supported in C#
+// Use interfaces instead:
+interface IWorkable { void Work(); }
+interface IPayable { void Pay(); }
+class clsWorker : IWorkable, IPayable
+{
+    public void Work() { }
+    public void Pay() { }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Types of Inheritance | Single, Multi-Level, Hierarchal, Multiple, Hybrid |
+| Multiple inheritance not supported in Java and C# | True |
+
+---
+
+# Lesson 27: Up Casting vs Down Casting
+
+## Casting Types
+
+| Type | Direction | Description |
+|------|-----------|-------------|
+| **Up Casting** | Derived → Base | Converting derived object to base type (safe) |
+| **Down Casting** | Base → Derived | Converting base object to derived type (risky) |
+
+```csharp
+class clsPerson
+{
+    public string FullName = "Mohammed Abu-Hadhoud";
+}
+
+class clsEmployee : clsPerson
+{
+    public string Title = "CEO";
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee();
+        Console.WriteLine(Employee1.FullName);
+        Console.WriteLine(Employee1.Title);
+
+        // Up Casting: Converting Employee to Person (safe)
+        clsPerson Person1 = Employee1;
+        Console.WriteLine(Person1.FullName);
+        // Cannot access Title through Person reference
+        // Console.WriteLine(Person1.Title); // Error!
+
+        // Down Casting: Converting Person to Employee (requires explicit cast)
+        // This is risky - only works if the object really is an Employee
+        clsEmployee Employee2 = (clsEmployee)Person1;
+        Console.WriteLine(Employee2.Title);
+        
+        // BAD: Down casting on a real Person object would fail
+        // clsPerson Person2 = new clsPerson();
+        // clsEmployee Employee3 = (clsEmployee)Person2; // Runtime error!
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Up Casting is converting derived object to base object | True |
+| Down Casting is converting base object to derived object | True |
+| Parent pointer can point to child object | True |
+| Child pointer cannot point to parent object | True |
+
+---
+
+# Lesson 28: Virtual Functions
+
+## Problem Without Virtual Functions
+
+When using upcasting, the base class method is called instead of the overridden derived method.
+
+## Solution: Virtual Functions
+
+Use the `virtual` keyword in the base class and `override` in the derived class.
+
+```csharp
+class clsPerson
+{
+    public virtual void Print()
+    {
+        Console.WriteLine("Hi, I'm a person!");
+    }
+}
+
+class clsEmployee : clsPerson
+{
+    public override void Print()
+    {
+        Console.WriteLine("Hi, I'm an Employee");
+    }
+}
+
+class clsStudent : clsPerson
+{
+    public override void Print()
+    {
+        Console.WriteLine("Hi, I'm a student");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee();
+        clsStudent Student1 = new clsStudent();
+
+        Employee1.Print();  // "Hi, I'm an Employee"
+        Student1.Print();   // "Hi, I'm a student"
+
+        // Up Casting with Virtual Functions
+        clsPerson Person1 = Employee1;
+        clsPerson Person2 = Student1;
+
+        Person1.Print();   // "Hi, I'm an Employee"  (Virtual works!)
+        Person2.Print();   // "Hi, I'm a student"   (Virtual works!)
+    }
+}
+```
+
+### Virtual Table (vtable)
+
+- The compiler creates a **Virtual Table** containing addresses of virtual methods
+- Each object has a pointer to this table (vptr)
+- Enables runtime polymorphism
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Virtual function is a member function expected to be redefined in derived classes | True |
+| Virtual function ensures function is overridden | True |
+
+---
+
+# Lesson 29: Static/Early Binding vs Dynamic/Late Binding
+
+## Binding Types
+
+| Type | Timing | Description |
+|------|--------|-------------|
+| **Static/Early Binding** | Compile time | Address of function is determined at compilation |
+| **Dynamic/Late Binding** | Runtime | Address of function is determined at runtime |
+
+## Examples
+
+```csharp
+class clsPerson
+{
+    public virtual void Print()
+    {
+        Console.WriteLine("Hi, I'm a person!");
+    }
+}
+
+class clsEmployee : clsPerson
+{
+    public override void Print()
+    {
+        Console.WriteLine("Hi, I'm an Employee");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee();
+        
+        // Static/Early Binding - resolved at compile time
+        Employee1.Print();
+        
+        // Dynamic/Late Binding - resolved at runtime
+        clsPerson Person1 = Employee1;
+        Person1.Print();  // Which Print()? Determined at runtime
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Static Binding: resolved at compile time | True |
+| Dynamic Binding: resolved at runtime (overriding is example) | True |
+| Early Binding and Static Binding are the same | True |
+| Late Binding and Dynamic Binding are the same | True |
+
+---
+
+# Lesson 30: Polymorphism (Fourth Principle)
+
+## Definition
+
+> **Polymorphism** (Greek: "Poly" = many, "Morph" = forms) is the ability of an object to take many forms.
+
+### Benefits
+
+- Create consistent code
+- Write code once, work with different types
+- Reduces errors
+- Easier to remember function names
+
+## Ways to Achieve Polymorphism
+
+| Way | Description | Example |
+|-----|-------------|---------|
+| **Function Overloading** | Multiple functions with same name, different parameters | `Add(int a, int b)`, `Add(double a, double b)` |
+| **Operator Overloading** | Custom operators for classes | `+`, `-`, `*`, `/` |
+| **Function Overriding** | Redefining base class methods | `virtual` + `override` |
+| **Virtual Functions** | Runtime polymorphism | Base class pointer to derived object |
+
+### Example
+
+```csharp
+// Function Overloading (Compile-time Polymorphism)
+class Calculator
+{
+    public int Add(int a, int b) { return a + b; }
+    public double Add(double a, double b) { return a + b; }
+    public int Add(int a, int b, int c) { return a + b + c; }
+}
+
+// Runtime Polymorphism (using Virtual Functions)
+class Shape
+{
+    public virtual void Draw()
+    {
+        Console.WriteLine("Drawing shape");
+    }
+}
+
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing circle");
+    }
+}
+
+class Rectangle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing rectangle");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Polymorphism in action
+        Shape[] shapes = { new Circle(), new Rectangle(), new Circle() };
+        
+        foreach (Shape shape in shapes)
+        {
+            shape.Draw();  // Calls appropriate method based on actual object type
+        }
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Polymorphism allows creating consistent code | True |
+| Polymorphism means "Many Forms" | True |
+| Ways to achieve Polymorphism | Function Overloading, Operator Overloading, Function Overriding, Virtual Methods |
+
+---
+
+# Lesson 31: Interfaces (Pure Virtual Functions & Abstract Classes)
+
+## Definition
+
+> An **Abstract Class** (or **Interface**) is a class that contains at least one **Pure Virtual Function**. It serves as a contract that derived classes must implement.
+
+### Pure Virtual Function
+
+- Has no implementation (= 0 in C++, abstract in C#)
+- Must be implemented by derived classes
+- Makes the class abstract
+
+```csharp
+// Abstract Class / Interface / Contract
+abstract class clsMobile
+{
+    // Abstract methods (Pure Virtual)
+    public abstract void Dial(string PhoneNumber);
+    public abstract void SendSMS(string PhoneNumber, string Text);
+    public abstract void TakePicture();
+}
+
+// Class signing the contract - MUST implement ALL abstract methods
+class clsiPhone : clsMobile
+{
+    public override void Dial(string PhoneNumber)
+    {
+        Console.WriteLine($"Dialing {PhoneNumber} from iPhone");
+    }
+
+    public override void SendSMS(string PhoneNumber, string Text)
+    {
+        Console.WriteLine($"Sending SMS to {PhoneNumber}: {Text}");
+    }
+
+    public override void TakePicture()
+    {
+        Console.WriteLine("Taking picture with iPhone camera");
+    }
+
+    // Can add extra methods
+    public void FaceTime()
+    {
+        Console.WriteLine("Making FaceTime call");
+    }
+}
+
+class clsSamsungNote10 : clsMobile
+{
+    public override void Dial(string PhoneNumber)
+    {
+        Console.WriteLine($"Dialing {PhoneNumber} from Samsung");
+    }
+
+    public override void SendSMS(string PhoneNumber, string Text)
+    {
+        Console.WriteLine($"Sending SMS to {PhoneNumber}: {Text}");
+    }
+
+    public override void TakePicture()
+    {
+        Console.WriteLine("Taking picture with Samsung camera");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsiPhone iPhone1 = new clsiPhone();
+        clsSamsungNote10 Note10 = new clsSamsungNote10();
+        
+        iPhone1.Dial("123-456-7890");
+        iPhone1.TakePicture();
+        
+        Note10.Dial("098-765-4321");
+        Note10.SendSMS("098-765-4321", "Hello from Samsung!");
+    }
+}
+```
+
+### Key Points
+
+- Cannot create an object of an Abstract Class
+- Can create objects of concrete derived classes that implement all abstract methods
+- Abstract Class vs Interface in C#: 
+  - Abstract class can have implemented methods
+  - Interface has only declarations (before C# 8.0)
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Pure virtual function has no body and ends with abstract keyword | True |
+| Abstract class has at least one pure virtual function | True |
+| Can you have an object of abstract class? | No |
+| Abstract class is a contract | True |
+| Abstract class descendants must define pure virtual functions | True |
+| Abstract class can have extra methods | True |
+| Abstract class is same as Abstraction concept? | No, they are different |
+
+---
+
+# Lesson 32: Friend Classes
+
+## Definition
+
+> A **Friend Class** can access private and protected members of the class that declares it as a friend.
+
+```csharp
+class clsA
+{
+    private int _Var1 = 10;
+    protected int _Var3 = 30;
+    public int Var2 = 20;
+
+    // Granting friendship to clsB
+    // Note: C# doesn't have friend keyword - this is C++ concept
+    // In C#, use internal or nested classes for similar functionality
+}
+
+// C# equivalent using internal and nested classes
+public class clsA
+{
+    private int _var1 = 10;
+    protected int _var3 = 30;
+    public int var2 = 20;
+
+    // Nested class has access to containing class's private members
+    public class clsB
+    {
+        public void Display(clsA A1)
+        {
+            Console.WriteLine($"Value of Var1={A1._var1}");
+            Console.WriteLine($"Value of Var2={A1.var2}");
+            Console.WriteLine($"Value of Var3={A1._var3}");
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsA A1 = new clsA();
+        clsA.clsB B1 = new clsA.clsB();
+        B1.Display(A1);
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Friend class can access private and protected members | True |
+| Friend relation is only granted, not taken | True |
+| If ClassB is friend of ClassA, can ClassA access ClassB members? | No |
+
+---
+
+# Lesson 33: Friend Function
+
+## Definition
+
+> A **Friend Function** is a non-member function that can access private and protected members of a class.
+
+```csharp
+using System;
+
+class clsA
+{
+    private int _Var1 = 10;
+    protected int _Var3 = 30;
+    public int Var2 = 20;
+
+    // In C#, there's no direct friend function equivalent
+    // We can achieve similar functionality using internal or by making methods public
+    // For demonstration, here's a C# approach:
+    
+    public int GetVar1() { return _Var1; }
+    public int GetVar3() { return _Var3; }
+}
+
+// Normal function that can access private members
+// In C#, we need public properties to access private data
+class Calculator
+{
+    public static int MySum(clsA A1)
+    {
+        return A1.GetVar1() + A1.Var2 + A1.GetVar3();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsA A1 = new clsA();
+        Console.WriteLine(Calculator.MySum(A1));
+    }
+}
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Friend function can access private, protected, and public members | True |
+| Friend function is declared using friend keyword (C++ concept) | True |
+| Friend functions are not member functions | True |
+| Non-member functions cannot access private members normally | True |
+
+---
+
+# Lesson 34: Structure Inside Class
+
+## Can we create a Structure inside a Class?
+
+**Yes!** A class can contain a structure definition.
+
+```csharp
+class clsPerson
+{
+    // Structure inside class
+    public struct stAddress
+    {
+        public string AddressLine1;
+        public string AddressLine2;
+        public string City;
+        public string Country;
+    }
+
+    public string FullName;
+    public stAddress Address;
+
+    public clsPerson()
+    {
+        FullName = "Mohammed Abu-Hadhoud";
+        Address.AddressLine1 = "Building 10";
+        Address.AddressLine2 = "Queen Rania Street";
+        Address.City = "Amman";
+        Address.Country = "Jordan";
+    }
+
+    public void SetCity(string City)
+    {
+        Address.City = City;
+    }
+
+    public string GetCity()
+    {
+        return Address.City;
+    }
+
+    public void PrintAddress()
+    {
+        Console.WriteLine("\nAddress:");
+        Console.WriteLine(Address.AddressLine1);
+        Console.WriteLine(Address.AddressLine2);
+        Console.WriteLine(Address.City);
+        Console.WriteLine(Address.Country);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsPerson Person1 = new clsPerson();
+        Person1.PrintAddress();
+        
+        Person1.SetCity("Madinah");
+        Console.WriteLine($"\n{Person1.GetCity()}");
+        Person1.PrintAddress();
+    }
+}
+```
+
+---
+
+# Lesson 35: Nested Classes
+
+## Can we create a Class inside another Class?
+
+**Yes!** A class can contain another class definition.
+
+```csharp
+class clsPerson
+{
+    private string _FullName;
+
+    // Nested Class (Inner Class)
+    public class clsAddress
+    {
+        private string _AddressLine1;
+        private string _AddressLine2;
+        private string _City;
+        private string _Country;
+
+        public clsAddress(string AddressLine1, string AddressLine2, string City, string Country)
+        {
+            _AddressLine1 = AddressLine1;
+            _AddressLine2 = AddressLine2;
+            _City = City;
+            _Country = Country;
+        }
+
+        public void SetAddressLine1(string AddressLine1) { _AddressLine1 = AddressLine1; }
+        public string GetAddressLine1() { return _AddressLine1; }
+        
+        public void SetAddressLine2(string AddressLine2) { _AddressLine2 = AddressLine2; }
+        public string GetAddressLine2() { return _AddressLine2; }
+        
+        public void SetCity(string City) { _City = City; }
+        public string GetCity() { return _City; }
+        
+        public void SetCountry(string Country) { _Country = Country; }
+        public string GetCountry() { return _Country; }
+
+        public void Print()
+        {
+            Console.WriteLine("\nAddress:");
+            Console.WriteLine(_AddressLine1);
+            Console.WriteLine(_AddressLine2);
+            Console.WriteLine(_City);
+            Console.WriteLine(_Country);
+        }
+    }
+
+    public void SetFullName(string FullName) { _FullName = FullName; }
+    public string GetFullName() { return _FullName; }
+
+    public clsAddress Address { get; set; }
+
+    public clsPerson(string FullName, string AddressLine1, string AddressLine2, string City, string Country)
+    {
+        _FullName = FullName;
+        Address = new clsAddress(AddressLine1, AddressLine2, City, Country);
+    }
+
+    public void PrintInfo()
+    {
+        Console.WriteLine("\nInfo : ");
+        Console.WriteLine("===========================================");
+        Console.WriteLine($"Full Name : {_FullName}");
+        Console.WriteLine($"Address Line1 : {Address.GetAddressLine1()}");
+        Console.WriteLine($"Address Line2 : {Address.GetAddressLine2()}");
+        Console.WriteLine($"City : {Address.GetCity()}");
+        Console.WriteLine($"Country : {Address.GetCountry()}");
+        Console.WriteLine("===========================================");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsPerson Person1 = new clsPerson("Mohammed Abu-Hadhoud", "Building 10", "Queen Rania Street", "Amman", "Jordan");
+        
+        Person1.Address.Print();
+        Person1.PrintInfo();
+    }
+}
+```
+
+### Terminology
+
+| Term | Description |
+|------|-------------|
+| **Inner Class** | The class defined inside another class |
+| **Enclosing Class** | The class that contains the inner class |
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Inner Class is a class defined inside another class | True |
+| Enclosing Class contains the inner class | True |
+| Inner class is a member of Enclosing Class | True |
+| Enclosing class members have special access to inner class | False (normal access rules apply) |
+
+---
+
+# Lesson 36: Separate Classes In Libraries
+
+## How to Create a Class Library
+
+### Steps in Visual Studio (C#)
+
+1. Right-click Solution → Add → New Project
+2. Select "Class Library" (.NET Standard or .NET Core)
+3. Name your library (e.g., "MyClassLibrary")
+4. Add your class to the library
+5. Build the project to generate the DLL
+
+### Using the Library
+
+```csharp
+// In your main project, add a reference to the library
+// Then add using statement:
+
+using MyClassLibrary;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsPerson Person1 = new clsPerson();
+        // Use the class from the library
+    }
+}
+```
+
+### Header Guards in C++
+
+In C++, we use `#pragma once` or include guards to prevent multiple inclusions:
+
+```cpp
+// clsPerson.h
+#pragma once
+
+class clsPerson
+{
+    // Class definition
+};
+```
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Separating code in libraries makes life easier | True |
+| `#pragma once` prevents compiler from loading library multiple times | True |
+
+---
+
+# Lesson 37: 'this' Pointer
+
+## Definition
+
+> The **'this' pointer** is an implicit pointer available inside all non-static member functions that points to the current object.
+
+### Uses of 'this'
+
+- Resolve naming conflicts (parameter vs member variable)
+- Pass current object as parameter
+- Return current object from method
+- Access all members (private, protected, public)
+
+```csharp
+class clsEmployee
+{
+    public int ID;
+    public string Name;
+    public float Salary;
+
+    public clsEmployee(int ID, string Name, float Salary)
+    {
+        // 'this' resolves ambiguity between parameter and member
+        this.ID = ID;
+        this.Name = Name;
+        this.Salary = Salary;
+    }
+
+    public void Print()
+    {
+        // 'this' is optional here
+        Console.WriteLine($"{this.ID} {this.Name} {this.Salary}");
+    }
+
+    public void Process()
+    {
+        // Passing current object to another method
+        Helper.ProcessEmployee(this);
+    }
+}
+
+static class Helper
+{
+    public static void ProcessEmployee(clsEmployee Employee)
+    {
+        Console.WriteLine($"Processing employee: {Employee.Name}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        clsEmployee Employee1 = new clsEmployee(101, "Ali", 5000);
+        Employee1.Print();
+        Employee1.Process();
+    }
+}
+```
+
+### Important Notes
+
+- `this` is an implicit parameter to all non-static member functions
+- Static methods DO NOT have a `this` pointer
+- Friend functions DO NOT have a `this` pointer
+
+### Quiz Answers
+
+| Question | Answer |
+|----------|--------|
+| Every object has access to its address through 'this' pointer | True |
+| 'this' is an implicit parameter to all member functions | True |
+| Inside member function, 'this' refers to invoking object | True |
+| Friend functions do not have 'this' pointer | True |
+| 'this' can be used to pass current object as parameter | True |
+| 'this' can be used to refer to current class instance variable | True |
+
+---
+
+# Lesson 38-41: String & Date Library Projects
+
+## clsString Library (String Utilities)
+
+```csharp
+public class clsString
+{
+    // Static methods (can be called without object)
+    public static int CountWords(string Text)
+    {
+        string[] words = Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        return words.Length;
+    }
+
+    public static string ReverseString(string Text)
+    {
+        char[] charArray = Text.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
+    }
+
+    public static string UpperFirstLetterOfEachWord(string Text)
+    {
+        string[] words = Text.Split(' ');
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].Length > 0)
+            {
+                char[] chars = words[i].ToCharArray();
+                chars[0] = char.ToUpper(chars[0]);
+                words[i] = new string(chars);
+            }
+        }
+        return string.Join(" ", words);
+    }
+}
+```
+
+## clsDate Library (Date Utilities)
+
+```csharp
+public class clsDate
+{
+    private DateTime _Date;
+
+    public clsDate()
+    {
+        _Date = DateTime.Now;
+    }
+
+    public clsDate(int Year, int Month, int Day)
+    {
+        _Date = new DateTime(Year, Month, Day);
+    }
+
+    public clsDate(DateTime Date)
+    {
+        _Date = Date;
+    }
+
+    // Properties
+    public int Year { get { return _Date.Year; } }
+    public int Month { get { return _Date.Month; } }
+    public int Day { get { return _Date.Day; } }
+
+    // Static utility methods
+    public static bool IsLeapYear(int Year)
+    {
+        return DateTime.IsLeapYear(Year);
+    }
+
+    public static int DaysInMonth(int Year, int Month)
+    {
+        return DateTime.DaysInMonth(Year, Month);
+    }
+
+    public static string DateToString(DateTime Date)
+    {
+        return Date.ToString("dd/MM/yyyy");
+    }
+
+    // Instance methods
+    public void AddDays(int Days)
+    {
+        _Date = _Date.AddDays(Days);
+    }
+
+    public void AddMonths(int Months)
+    {
+        _Date = _Date.AddMonths(Months);
+    }
+
+    public void AddYears(int Years)
+    {
+        _Date = _Date.AddYears(Years);
+    }
+
+    public void Print()
+    {
+        Console.WriteLine($"Date: {DateToString(_Date)}");
+    }
+}
+```
+
+## clsPeriod Library (Date Period Utilities)
+
+```csharp
+public class clsPeriod
+{
+    public clsDate StartDate { get; set; }
+    public clsDate EndDate { get; set; }
+
+    public clsPeriod(clsDate StartDate, clsDate EndDate)
+    {
+        this.StartDate = StartDate;
+        this.EndDate = EndDate;
+    }
+
+    public int GetPeriodLengthInDays()
+    {
+        TimeSpan difference = EndDate._Date - StartDate._Date;
+        return (int)difference.TotalDays;
+    }
+
+    public bool IsOverlapWith(clsPeriod OtherPeriod)
+    {
+        return !(EndDate._Date < OtherPeriod.StartDate._Date || 
+                 StartDate._Date > OtherPeriod.EndDate._Date);
+    }
+
+    public static bool IsDateInPeriod(clsDate Date, clsPeriod Period)
+    {
+        return Date._Date >= Period.StartDate._Date && Date._Date <= Period.EndDate._Date;
+    }
+}
+```
+
+---
+
+# Lesson 42: Difference Between Class and Structure
+
+## C vs C++ Difference
+
+- **C language**: Does NOT support OOP
+- **C++ language**: Supports both Procedural and OOP
+- C++ is an extension of C
+
+## Class vs Structure in C++ and C#
+
+| Feature | Struct | Class |
+|---------|--------|-------|
+| **Default member access** | Public | Private |
+| **Main purpose** | Store simple data | Encapsulate data and behavior |
+| **Inheritance** | Limited (no inheritance in C# struct) | Full inheritance support |
+| **Constructors** | Parameterized only (C#) | All types |
+| **Destructors** | Not allowed (C#) | Allowed |
+| **Storage** | Usually stack (value type in C#) | Heap (reference type) |
+| **Use when** | Small data structures | Complex objects with behavior |
+
+## C# Differences
+
+```csharp
+// Structure (Value Type)
+public struct stPerson
+{
+    public string FirstName;
+    public string LastName;
+    
+    // Parameterized constructor only (C#)
+    public stPerson(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+    }
+}
+
+// Class (Reference Type)
+public class clsPerson
+{
+    private string _FirstName;
+    private string _LastName;
+    
+    // Any constructor type
+    public clsPerson() { }
+    
+    public clsPerson(string firstName, string lastName)
+    {
+        _FirstName = firstName;
+        _LastName = lastName;
+    }
+    
+    // Can have methods
+    public string FullName()
+    {
+        return _FirstName + " " + _LastName;
+    }
+}
+```
+
+## When to Use What?
+
+| Use Structure When | Use Class When |
+|-------------------|----------------|
+| Small data structures | Large/complex objects |
+| Short-lived objects | Long-lived objects |
+| Immutable data | Mutable data |
+| Performance critical (stack allocation) | Need inheritance |
+| Simple data container | Need behavior/methods |
+
+---
+
+## 🎉 Conclusion
+
+Congratulations! You have completed a comprehensive journey through **Object-Oriented Programming (OOP)** in C#. You've learned:
+
+✅ The 4 Pillars of OOP: Encapsulation, Abstraction, Inheritance, Polymorphism  
+✅ Classes and Objects  
+✅ Access Specifiers (Public, Private, Protected)  
+✅ Properties (Get/Set)  
+✅ Constructors and Destructors  
+✅ Static Members and Methods  
+✅ Inheritance and Function Overriding  
+✅ Virtual Functions and Polymorphism  
+✅ Abstract Classes and Interfaces  
+✅ Projects: Calculator, Person, Employee, String, Date, Period  
+
+---
+ 
