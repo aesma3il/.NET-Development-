@@ -1,4 +1,146 @@
 
+
+# Programming Exercises (Arabic to English Translation)
+
+## Basic Input & Output
+
+**اكتب برنامج لطباعة اسمك على الشاشة السوداء**
+Write a program to print your name on the black screen.
+
+**اكتب برنامج يقرا ومن ثم يطبع اسمك**
+Write a program that reads and then prints your name.
+
+**اكتب برنامج يقرا عمرك ثم يطبعه على الشاشة**
+Write a program that reads your age and then prints it on the screen.
+
+**اكتب برنامج يقرا معلوماتك الشخصية مثل: الاسم الأول, الثاني, الثالث, الأخير, الجنس, الحالة الاجتماعية, العمر, الطول, الوزن, الهاتف , الايميل, العنوان, المدينة, الجنسية, الدولة ومن ثم طباعتها على شاشة الكونسل.**
+Write a program that reads your personal information such as: first name, second name, third name, last name, gender, marital status, age, height, weight, phone, email, address, city, nationality, country, and then prints it on the console screen.
+
+## Basic Arithmetic Operations
+
+**اكتب برنامج لقراءة رقمين ثم طباعتهما**
+Write a program to read two numbers and then print them.
+
+**اكتب برنامج لجمع رقمين**
+Write a program to add two numbers.
+
+**اكتب برنامج لضرب رقمين**
+Write a program to multiply two numbers.
+
+**اكتب برنامج لقسمة رقمين**
+Write a program to divide two numbers.
+
+**اكتب برنامج لايجاد باقي القسمة بين رقمين**
+Write a program to find the remainder of division between two numbers.
+
+## Calculations with Grades
+
+**اكتب برنامج لجمع اربع مواد دراسية ثم طباعة المجموع**
+Write a program to add four subject grades and then print the total sum.
+
+**اكتب برنامج لقراءة اربع مواد دراسية ثم إيجاد المعدل**
+Write a program to read four subject grades and then calculate the average.
+
+## Conditional Logic (Comparisons)
+
+**اكتب برنامج لايجاد الرقم الأكبر بين رقمين تم ادخالهم من المستخدم**
+Write a program to find the larger number between two numbers entered by the user.
+
+**اكتب برنامج لايجاد الرقم الأصغر بين رقمين تم ادخالهم من المستخدم**
+Write a program to find the smaller number between two numbers entered by the user.
+
+**اكتب برنامج للتحقق من ان الرقم المدخل هو سالب ام موجب**
+Write a program to check whether the entered number is negative or positive.
+
+**اكتب برنامج للتحقق من ان الرقم الذي تم إدخاله زوجي ام فردي**
+Write a program to check whether the entered number is even or odd.
+
+**اكتب برنامج لقراءة رقمين ثم يتحقق ما اذا كان الرقمين متساويين ام ليسو متساويان**
+Write a program to read two numbers and then check whether the two numbers are equal or not equal.
+
+## Advanced Conditional Logic (Grade Classification)
+
+**اكتب برنامج لقراءة اربع مواد دراسية ثم إيجاد المعدل واذا كان المعدل بين 60-70 يطبع لك مقبول, بين 70-80 جيد, بين 80-90 جيد جدا, بين 90-100 ممتاز**
+Write a program to read four subject grades, calculate the average, and:
+- If the average is between 60-70, print "Acceptable"
+- Between 70-80, print "Good"
+- Between 80-90, print "Very Good"
+- Between 90-100, print "Excellent"
+
+**اكتب برنامج لقراءة عمرك ثم يتحقق ما اذا كنت طفل, شباب, بالغ, ... الخ...**
+Write a program to read your age and then check if you are a child, youth, adult, ... etc.
+
+**اكتب برنامج لقراءة معدلك واشترط عليك ابوك انه اذا كان معدلك اكبر من 80 واصغر من 90 بيجيب لك تلفون ايفون, اذا بين 70 وال 80 بيجيب لك تلفون سامسونج, اذا بين 60 وال 70 بيعطيك تلفون نوكيا قديم..**
+Write a program to read your average grade, where your father's condition is:
+- If the average is greater than 80 and less than 90 → iPhone
+- If between 70 and 80 → Samsung phone
+- If between 60 and 70 → an old Nokia phone
+
+**اكتب برنامج يتحقق من مستوى البطارية في هاتفك واذا كان اقل من 20 يعرض لك رسالة قم بتوصيل الشاحن, واذا كان قل من 15 يغير خلفية البرنامج الى اللون الأحمر, واذا كانت صفر, يطبع رسالة سيتم اغلاق الهاتف.**
+Write a program that checks the battery level of your phone and:
+- If less than 20 → displays a message "Connect the charger"
+- If less than 15 → changes the program background to red
+- If zero → prints a message "The phone will shut down"
+
+## Loops (Basic to Advanced)
+
+**اكتب برنامج لطباعة الأرقام من 1 الى n**
+Write a program to print numbers from 1 to n.
+
+**اكتب برنامج لطباعة الأرقام من n  الى 1**
+Write a program to print numbers from n to 1.
+
+**اكتب برنامج لطباعة الاعداد الزوجية من 1 الى 100**
+Write a program to print even numbers from 1 to 100.
+
+**اكتب برنامج لطباعة الاعداد الفردية من 1 الى 100**
+Write a program to print odd numbers from 1 to 100.
+
+**اكتب برنامج لايجاد مضروب عدد مدخل من قبل المستخدم**
+Write a program to find the factorial of a number entered by the user.
+
+**اكتب برنامج لطباعة الأرقام من 1 الى 100 واذا كان العدد فردي يتم استمرار طباعة الاعداد**
+Write a program to print numbers from 1 to 100, and if the number is odd, continue printing.
+
+**اكتب برنامج لطباعة الأرقام من 1 الى 10 وذا وصل الى الرقم 7 يتم الخروج من الطباعة**
+Write a program to print numbers from 1 to 10, and when reaching the number 7, exit printing.
+
+## Arrays (1D and 2D)
+
+**اكتب برنامج لقراءة سبع درجات الى مصفوفة ثم جمع الدرجات وإيجاد المعدل وإيجاد التقدير ومن ثم طباعتهما.**
+Write a program to read seven grades into an array, then sum the grades, calculate the average, find the grade estimation, and then print them.
+
+**اكتب برنامج لقراءة سبع درجات وتخزينها في مصفوفة ثم القيام ب العمليات الاتية: إيجاد الدرجة التي حصلت عليها اكبر من 90, إيجاد الدرجة التي حصلت فيها على 80, إيجاد الدرجة التي رسبت فيها وحصلت على اقل من 50  ثم طباعتهما.**
+Write a program to read seven grades, store them in an array, then perform the following operations:
+- Find the grade(s) above 90
+- Find the grade(s) equal to 80
+- Find the failing grade(s) below 50
+- Then print them.
+
+**اكتب برنامج لقراءة اربع درجات ل أربعة طلاب وتخزينها في مصفوفة تنائية البعد ثم إيجاد مجموع درجات كل طالب وطباعة مجموع الدرجة لكل طالب.**
+Write a program to read four grades for four students and store them in a 2D array, then find the sum of grades for each student and print each student's total grade.
+
+**اكتب برنامج لقراءة مصفوفة ذات بعدين 3 في 3  وإجراء العمليات الاتية:**
+Write a program to read a 3x3 2D array and perform the following operations:
+
+- إيجاد عناصر القطر الرئيسي
+  Find the main diagonal elements
+- الثانوي
+  Find the secondary (anti) diagonal elements
+- المثلث العلوي
+  Find the upper triangle elements
+- المثلث السفلي
+  Find the lower triangle elements
+- يبدل عناصر القطر الرئيسي ب الثانوي
+  Swap main diagonal elements with secondary diagonal elements
+- يبدل عناصر المثلث العلوي ب المثلث السفلي
+  Swap upper triangle elements with lower triangle elements
+- يطبع عناصر القطر الرئيسي, الثانوي, المثلت العلوي, المثلت السفلي
+  Print the main diagonal, secondary diagonal, upper triangle, and lower triangle elements
+- ترتب المصفوفة وطباعة العناصر مرتبة
+  Sort the matrix and print the elements in order
+
+
 ```markdown
 # سلسلة حلول البرامج الأساسية - المستوى الأول
 
