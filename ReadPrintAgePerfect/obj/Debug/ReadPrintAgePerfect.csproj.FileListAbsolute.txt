@@ -1,0 +1,7 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\ReadPrintAgePerfect\bin\Debug\ReadPrintAgePerfect.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\ReadPrintAgePerfect\bin\Debug\ReadPrintAgePerfect.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\ReadPrintAgePerfect\bin\Debug\ReadPrintAgePerfect.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\ReadPrintAgePerfect\obj\Debug\ReadPrintAgePerfect.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\ReadPrintAgePerfect\obj\Debug\ReadPrintAgePerfect.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\ReadPrintAgePerfect\obj\Debug\ReadPrintAgePerfect.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\ReadPrintAgePerfect\obj\Debug\ReadPrintAgePerfect.pdb

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\PerfectPrintName\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6B6DD7FE-64CC-40E3-AB0D-0401E9AB58BA}|PerfectPrintName.csproj|d:\\portfolio\\rebuild-software-fundamentals\\perfectprintname\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B6DD7FE-64CC-40E3-AB0D-0401E9AB58BA}|PerfectPrintName.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\PerfectPrintName\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\PerfectPrintName\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T16:25:22.85Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

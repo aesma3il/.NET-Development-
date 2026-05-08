@@ -1,0 +1,6 @@
+@ApiFileUploadDonAndPdfWorking_HostAddress = http://localhost:5139
+
+GET {{ApiFileUploadDonAndPdfWorking_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\ApiFileUploadDonAndPdfWorking\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{116C103C-9EEA-4F5F-BF3C-42D5E4F8044E}|ApiFileUploadDonAndPdfWorking.csproj|d:\\portfolio\\rebuild-software-fundamentals\\apifileuploaddonandpdfworking\\classes models\\staticfileextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{116C103C-9EEA-4F5F-BF3C-42D5E4F8044E}|ApiFileUploadDonAndPdfWorking.csproj|solutionrelative:classes models\\staticfileextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{116C103C-9EEA-4F5F-BF3C-42D5E4F8044E}|ApiFileUploadDonAndPdfWorking.csproj|d:\\portfolio\\rebuild-software-fundamentals\\apifileuploaddonandpdfworking\\apifileuploaddonandpdfworking.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{116C103C-9EEA-4F5F-BF3C-42D5E4F8044E}|ApiFileUploadDonAndPdfWorking.csproj|solutionrelative:apifileuploaddonandpdfworking.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{116C103C-9EEA-4F5F-BF3C-42D5E4F8044E}|ApiFileUploadDonAndPdfWorking.csproj|d:\\portfolio\\rebuild-software-fundamentals\\apifileuploaddonandpdfworking\\controllers\\uploadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{116C103C-9EEA-4F5F-BF3C-42D5E4F8044E}|ApiFileUploadDonAndPdfWorking.csproj|solutionrelative:controllers\\uploadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StaticFileExtensions.cs",
+              "DocumentMoniker": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\ApiFileUploadDonAndPdfWorking\\classes models\\StaticFileExtensions.cs",
+              "RelativeDocumentMoniker": "classes models\\StaticFileExtensions.cs",
+              "ToolTip": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\ApiFileUploadDonAndPdfWorking\\classes models\\StaticFileExtensions.cs",
+              "RelativeToolTip": "classes models\\StaticFileExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T01:04:04.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApiFileUploadDonAndPdfWorking",
+              "DocumentMoniker": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\ApiFileUploadDonAndPdfWorking\\ApiFileUploadDonAndPdfWorking.csproj",
+              "RelativeDocumentMoniker": "ApiFileUploadDonAndPdfWorking.csproj",
+              "ToolTip": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\ApiFileUploadDonAndPdfWorking\\ApiFileUploadDonAndPdfWorking.csproj",
+              "RelativeToolTip": "ApiFileUploadDonAndPdfWorking.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-06T01:03:05.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UploadsController.cs",
+              "DocumentMoniker": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\ApiFileUploadDonAndPdfWorking\\Controllers\\UploadsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UploadsController.cs",
+              "ToolTip": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\ApiFileUploadDonAndPdfWorking\\Controllers\\UploadsController.cs",
+              "RelativeToolTip": "Controllers\\UploadsController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwDgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T01:01:27.619Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

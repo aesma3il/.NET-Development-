@@ -1,0 +1,7 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectPrintName\bin\Debug\PerfectPrintName.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectPrintName\bin\Debug\PerfectPrintName.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectPrintName\bin\Debug\PerfectPrintName.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectPrintName\obj\Debug\PerfectPrintName.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectPrintName\obj\Debug\PerfectPrintName.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectPrintName\obj\Debug\PerfectPrintName.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectPrintName\obj\Debug\PerfectPrintName.pdb
