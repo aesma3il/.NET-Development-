@@ -1,0 +1,7 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\CustomerManagementSystem\bin\Debug\CustomerManagementSystem.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\CustomerManagementSystem\bin\Debug\CustomerManagementSystem.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\CustomerManagementSystem\bin\Debug\CustomerManagementSystem.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\CustomerManagementSystem\obj\Debug\CustomerManagementSystem.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\CustomerManagementSystem\obj\Debug\CustomerManagementSystem.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\CustomerManagementSystem\obj\Debug\CustomerManagementSystem.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\CustomerManagementSystem\obj\Debug\CustomerManagementSystem.pdb

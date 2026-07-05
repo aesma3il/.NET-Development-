@@ -1,0 +1,8 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\bin\Debug\PerfectOddEvenNumber.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\bin\Debug\PerfectOddEvenNumber.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\bin\Debug\PerfectOddEvenNumber.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\obj\Debug\PerfectOddEvenNumber.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\obj\Debug\PerfectOddEvenNumber.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\obj\Debug\PerfectOddEvenNumber.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\obj\Debug\PerfectOddEvenNumber.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\PerfectOddEvenNumber\obj\Debug\PerfectOddEvenNumber.exe.config

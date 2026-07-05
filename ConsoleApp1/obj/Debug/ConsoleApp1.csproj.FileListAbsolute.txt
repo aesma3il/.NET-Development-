@@ -1,0 +1,7 @@
+D:\Portfolio\Rebuild-Software-Fundamentals\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\Portfolio\Rebuild-Software-Fundamentals\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\Portfolio\Rebuild-Software-Fundamentals\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Portfolio\Rebuild-Software-Fundamentals\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\Portfolio\Rebuild-Software-Fundamentals\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

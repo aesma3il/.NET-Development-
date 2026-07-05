@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\PaginationsClass\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5761B6FA-2B9B-4234-99FB-42B1D7F72D8F}|PaginationsClass.vcxproj|D:\\Portfolio\\Rebuild-Software-Fundamentals\\PaginationsClass\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5761B6FA-2B9B-4234-99FB-42B1D7F72D8F}|PaginationsClass.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\PaginationsClass\\Source.cpp",
+              "RelativeDocumentMoniker": "Source.cpp",
+              "ToolTip": "D:\\Portfolio\\Rebuild-Software-Fundamentals\\PaginationsClass\\Source.cpp",
+              "RelativeToolTip": "Source.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAgwC8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-08T19:08:04.516Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
